@@ -57,7 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\e[0;32m\][\[\e[0;90m\]\t \[\e[0;32m\]- \u@\h \[\e[0;34m\]\w\[\e[0;32m\]]\$\[\e[0m\] '
+    PS1='\[\e[0;32m\][\[\e[0;90m\]\t \[\e[0;32m\]- \u@\h \[\e[0;33m\]\w\[\e[0;32m\]]\$\[\e[0m\] '
     #PS1='\[\e[1;32m\][\t - \u@\h \W]\$\[\e[0m\] ' #'${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
@@ -122,4 +122,4 @@ alias urt='cd urbanterror/;./ioq3-urt-b';
 alias die='sudo shutdown -h'
 alias tux='ssh tux'
 alias eniac='ssh eniac'
-
+alias mutt='mutt -F muttrc/.muttrc'

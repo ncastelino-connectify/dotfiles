@@ -1,0 +1,23 @@
+set imap_user='nac78@drexel.edu'
+set from="nac78@drexel.edu"
+set use_from=yes # required so msmtp knows which account to use to send mails
+
+# setting your realname is optional, but drexel addresses can be cryptic...
+set realname="Neil Castelino" 
+
+# email server location
+set spoolfile=imaps://nac78@imap.mail.drexel.edu:993/INBOX
+set folder=imaps://nac78@imap.mail.drexel.edu:993/
+
+# use msmtp for sending mail
+set sendmail=/usr/bin/msmtp # Debian-style system path, yours may be different
+
+# save copies of sent email to the ${folder}Sent directory
+# the '+' expands to $folders (like '~' to $HOME in bash)
+set record=+Sent
+
+set mail_check=100 # check for new mail every 10 minutes when user is active
+set timeout=300    # check for new mail every 10 min. when user is not active
+
+set editor="/usr/bin/vim"   # use emacs for writing emails
+set edit_headers                  # allow editing headers while your in emacs

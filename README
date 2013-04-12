@@ -1,2 +1,3 @@
 .bashrc 	-> ~
-tmux.conf 	-> /etc/
+.tmux.conf 	-> ~
+muttrc 		-> ~ 
