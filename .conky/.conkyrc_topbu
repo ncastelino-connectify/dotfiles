@@ -1,0 +1,38 @@
+#avoid flicker
+double_buffer yes
+
+#own window to run simultanious 2 or more conkys
+own_window  yes
+own_window_transparent no
+own_window_type desktop
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager 
+
+#borders
+draw_borders no
+border_margin 0
+
+#shades
+draw_shades no
+
+#position
+gap_x 0
+gap_y 3
+alignment top_left
+
+#behaviour
+update_interval 3.0
+
+#colour
+default_color  808080
+own_window_colour 000000
+
+#font
+use_xft yes
+xftfont Sans:pixelsize=10
+
+#to prevent window from moving
+use_spacer none
+#minimum_size 1366 0
+
+TEXT
+${color green}OB ${color 8898ad}${time %d.%m.%Y %H:%M}     ${color}KERNEL: ${color 8898ad}$machine $kernel ${color}    U/T: ${color 8898ad}$uptime ${color}    Temp: ${color 8898ad}${acpitemp}    ${color}CPU: ${color 8898ad}${cpu cpu0}% ${cpugraph 10,50 000000 ffffff}${color}    BAT: ${color 8898ad} ${battery_percent}% ${color}    UL: ${color 8898ad} ${upspeed eth0}${color 808080}/ ${color 8898ad}${totalup eth0} ${upspeedgraph eth0 10,50 000000 00ff00} ${color}    DL: ${color 8898ad} ${downspeed eth0}${color 808080}/ ${color 8898ad}${totaldown eth0} ${color}${downspeedgraph eth0 10,50 000000 ff0000}     $color RAM: ${color 8898ad}$memperc% (${color 8898ad}$mem)    ${color}/: ${color 8898ad}${fs_free_perc /}%    ${color}Network : ${color 8898ad}${addr eth0}${color}

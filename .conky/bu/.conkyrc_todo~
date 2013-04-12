@@ -1,0 +1,91 @@
+# UBUNTU-CONKY
+# A comprehensive conky script, configured for use on
+# Ubuntu / Debian Gnome, without the need for any external scripts.
+#
+# Based on conky-jc and the default .conkyrc.
+# INCLUDES:
+# - tail of /var/log/messages
+# - netstat connections to your computer
+#
+# -- Pengo (conky@pengo.us)
+#
+
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+# Set conky on the bottom of all other applications
+on_bottom yes
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# fiddle with window
+use_spacer yes
+use_xft no
+
+# Update interval in seconds
+update_interval 3.0
+
+# Minimum size of text area
+# minimum_size 250 5
+
+# Draw shades?
+draw_shades no
+
+# Text stuff
+draw_outline no # amplifies text if yes
+draw_borders no
+font arial
+uppercase no # set to yes if you want all text to be in uppercase
+
+# Stippled borders?
+stippled_borders 3
+
+# border margins
+border_margin 9
+
+# border width
+border_width 10
+
+# Default colors and also border colors, grey90 == #e5e5e5
+default_color 8898ad
+
+own_window_colour brown
+own_window_transparent yes
+
+# Text alignment, other possible values are commented
+alignment top_left
+#alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+gap_x 0
+gap_y 180
+
+# stuff after ‘TEXT’ will be formatted on screen
+
+TEXT
+${color blue}TO DO LIST
+${color green}NAME			Due${color}
+${color red}Physics WA			Monday${color}
+${color red}CS172HW			Tuesday${color}
+CS172 Pre/Lab			F
+English			M/W
+Physics Lab			Friday
+${color red}Math Quiz			Monday${color}
+${color red}CS122			M/W${color}
+
+${color red}TechServ			M/W 7-9pm${color}
+
+Mail Susan
+Register Clicker
+Update ENGR Blog
+
+${color red}English Journal W${color}
+
+${color red}Mail UHousing
+The color of Water${color}

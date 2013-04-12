@@ -1,3 +1,5 @@
 .bashrc 	-> ~
 .tmux.conf 	-> ~
 muttrc 		-> ~ 
+.conky		-> ~
+conky_start	-> ~
