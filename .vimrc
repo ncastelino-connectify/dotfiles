@@ -18,7 +18,8 @@ set title
 set cindent
 set autoindent
 set smartindent
-set nowrap
+set wrap
+set linebreak
 
 set wildmode=longest,list,full
 set wildmenu
