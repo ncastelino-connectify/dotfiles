@@ -45,6 +45,7 @@ set foldlevel=3 "this is just what i use
 au BufRead,BufNewFile bash-fc-* set filetype=sh "useful for using vi mode in Bash 
 set splitbelow "Ensure that vertical splits add the new window on the bottom
 set splitright "Ensure that horizontal splits add the new frame on the right
+syntax on 
 
 "comment out lines with #
 map <Leader># :s:^:#:<CR>:nohl<CR> 
