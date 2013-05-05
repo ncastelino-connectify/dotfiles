@@ -57,7 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\e[0;32m\][\[\e[0;90m\]\t \[\e[0;32m\]- \u@\h \[\e[0;33m\]\w\[\e[0;32m\]]\$\[\e[0m\] '
+    PS1='\[\e[0;32m\][\[\e[0;21m\]\t \[\e[0;32m\]- \u@\h \[\e[0;33m\]\w\[\e[0;32m\]]\$\[\e[0m\] '
     #PS1='\[\e[1;32m\][\t - \u@\h \W]\$\[\e[0m\] ' #'${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
@@ -118,15 +118,15 @@ export PERL5LIB="/home/neil/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:/home/
 export PATH="/home/neil/perl5/bin:$PATH";
 alias l='ls -l'
 alias ll='ls -al'
-alias urt='cd ~/urbanterror/;./ioq3-urt-b';
+alias urt='cd urbanterror/;./ioq3-urt-b';
 alias die='sudo shutdown -h'
 alias tux='ssh tux'
 alias eniac='ssh eniac'
-alias mutt='mutt -F ~/muttrc/.muttrc'
+alias mutt='mutt -F muttrc/.muttrc'
 alias gc='git commit -am'
 alias gpull='git pull'
 alias gpush='git push'
 alias gits='git status'
 alias gita='git add'
-alias grep='grep --color=always'
-alias egrep='egrep --color=always'
+alias updatecs='rsync -av tux:~/CS265/ .'
+alias bc='bc -l'
