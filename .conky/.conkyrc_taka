@@ -1,0 +1,38 @@
+background yes
+use_xft yes
+xftfont 123:size=6
+xftalpha 1
+update_interval 1
+total_run_times 0
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,below,skip_taskbar,skip_pager,sticky
+double_buffer yes
+minimum_size 300
+maximum_width 300
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_color white
+default_shade_color black
+default_outline_color white
+alignment top_right
+gap_x 1
+gap_y 20
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+net_avg_samples 2
+override_utf8_locale yes
+use_spacer yes
+text_buffer_size 256
+draw_graph_borders no
+
+
+TEXT
+${font}${color green}${color azure}$font${color 8898ad}${alignr} 
+
+${color green}Taka${color azure}${color 8898ad}
+${exec curl -s http://www.takafansubs.com/ | grep releaseitem | sed -e 's/<\//\n/g' | grep td | grep tr | sed -e 's/.*>\(.*\)/\1/g'}
