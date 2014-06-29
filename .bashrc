@@ -133,3 +133,10 @@ alias updatecs='rsync -av tux:~/CS265/ .'
 alias bc='bc -l'
 alias define='~/Dictionary/define'
 alias ref='~/Dictionary/thesaurus'
+
+wikiCall() {
+    # Search wikipedia
+    dig +short txt "$1".wp.dg.cx
+}
+
+alias wiki=wikiCall
