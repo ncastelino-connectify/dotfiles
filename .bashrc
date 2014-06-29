@@ -121,6 +121,7 @@ alias ll='ls -al'
 alias urt='cd ~/urbanterror/;./ioq3-urt-b';
 alias die='sudo shutdown -h'
 alias tux='ssh tux'
+alias xtux='ssh -X tux'
 alias eniac='ssh eniac'
 alias mutt='mutt -F muttrc/.muttrc'
 alias gc='git commit -am'
