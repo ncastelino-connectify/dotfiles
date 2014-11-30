@@ -173,5 +173,7 @@ bar {
 	position top
 }
 
-exec --no-startup-id feh --bg-scale wimage.png
+exec --no-startup-id feh --bg-scale ~/tree.jpg
 exec --no-startup-id nm-applet
+exec --no-startup-id ~/.dropbox-dist/dropboxd &
+exec --no-startup-id ~/dotfiles/.i3/fix-notify-send-w-dbus

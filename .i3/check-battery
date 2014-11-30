@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -r "$HOME/.dbus/Xdbus" ]; then
+	. "$HOME/.dbus/Xdbus"
+fi
+
+if [ $(acpi -b | grep Discharging | sed 's/.*Discharging,\s\([0-9]*\)%.*/\1/') -lt 25 ]; then 
+	notify-send --urgency=CRITICAL 'BATTERY IS LOW; DO SOMETHING NOW'
+fi
