@@ -118,21 +118,19 @@ export PERL5LIB="/home/neil/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:/home/
 export PATH="/home/neil/perl5/bin:$PATH";
 alias l='ls -l'
 alias ll='ls -al'
-alias urt='cd ~/urbanterror/;./ioq3-urt-b';
+alias urt='cd ~/UrbanTerror42/;./Quake3-UrT.x86_64';
 alias die='sudo shutdown -h'
-alias tux='ssh tux'
-alias xtux='ssh -X tux'
+alias tux='ssh -X tux'
 alias eniac='ssh eniac'
 alias mutt='mutt -F muttrc/.muttrc'
-alias gc='git commit -am'
-alias gpull='git pull'
-alias gpush='git push'
-alias gits='git status'
-alias gita='git add'
 alias updatecs='rsync -av tux:~/CS265/ .'
 alias bc='bc -l'
 alias define='~/Dictionary/define'
 alias ref='~/Dictionary/thesaurus'
+alias get='sudo apt-get install'
+alias pick='sudo apt-cache search'
+alias update='sudo apt-get update'
+alias upgrade='sudo apt-get upgrade'
 
 wikiCall() {
     # Search wikipedia
