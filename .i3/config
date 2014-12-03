@@ -53,7 +53,7 @@ bindsym $mod+x exec pactl set-sink-volume 1 -- -10%
 bindsym $mod+y exec scrot ~/images/%Y-%m-%d--%s_$wx$h_scrot.png
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run  -nb '#000000' -nf '#FFFFFF' -sb '#222222' -sf '#0088ff'
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
