@@ -51,4 +51,4 @@ TEXT
   { "full_text" : "RAM ${membar} ${memperc}%" , "color" :
     ${if_match ${memperc}<90}"\#ffffff"${else}"\#ff0000"${endif} },
   { "full_text" : "${loadavg 1} ${cpu cpu0}%", "color" : ${if_match ${loadavg 1}<2}"\#ffffff"${else}"\#ff0000"${endif} },
-  { "full_text" : "${exec date +%F} ${exec date +%T}" } ],
+  { "full_text" : "[ ${exec date +%F} ${exec date +%T} ]" } ],
