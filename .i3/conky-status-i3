@@ -46,10 +46,9 @@ TEXT
   { "full_text" : "W${if_up wlan0}: ${wireless_link_qual_perc wlan0}% @ ${wireless_essid wlan0} ${addr wlan0}${else}${endif}" , "color" : ${if_up wlan0} "\#00ff00"${else}"\#ff0000"${endif} },
   { "full_text" : "E${if_up eth0}: ${addr eth0} [${totaldown eth0}/${totalup eth0}]${else}${endif}" , "color" : ${if_up eth0} "\#00ff00"${else}"\#ff0000"${endif} },
   { "full_text" : "BAT ${exec acpi -b | sed 's/.*,\s\([0-9][0-9]*\)%.*/\1/'}%" , "color" :
-    ${if_match ${memperc}<30}"\#ff0000"${else}"\#ffffff"${endif} },
+    ${if_match ${exec acpi -b | sed 's/.*,\s\([0-9][0-9]*\)%.*/\1/'}<30}"\#ff0000"${else}"\#ffffff"${endif} },
   { "full_text" : "RAM ${membar} (${memperc})%" , "color" :
     ${if_match ${memperc}<90}"\#ffffff"${else}"\#ff0000"${endif} },
-  { "full_text" : "${exec uptime | awk '{print $8}' | sed 's/.$//'}" },
-  { "full_text" : "${cpu cpu0}%" },
+  { "full_text" : "${exec uptime | awk '{print $8}' | sed 's/.$//'} ${cpu cpu0}%" },
   { "full_text" : "${exec date +%F} ${exec date +%T}" } ],
 
