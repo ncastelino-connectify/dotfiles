@@ -1,5 +1,6 @@
-.bashrc 	-> ~
-.tmux.conf 	-> ~
-muttrc 		-> ~ 
-.conky		-> ~
-conky_start	-> ~
+All of my dotfiles
+
+Notes:
+.i3/check-battery will work with a cronjob like
+	* * * * * /home/neil/dotfiles/.i3/check-battery
+
