@@ -48,6 +48,8 @@ TEXT
   { "full_text" : "E${if_up eth0}: ${addr eth0} [${totaldown eth0}/${totalup eth0}]${else}${endif}" , "color" : ${if_up eth0} "\#00ff00"${else}"\#ff0000"${endif} },
   { "full_text" : "BAT ${exec acpi -b | sed 's/.*,\s\([0-9][0-9]*\)%.*/\1/'}%" , "color" :
     ${if_match ${exec acpi -b | sed 's/.*,\s\([0-9][0-9]*\)%.*/\1/'}<30}"\#ff0000"${else}"\#ffffff"${endif} },
+  { "full_text" : "T${acpitemp}" , "color" :
+    ${if_match ${acpitemp}<60}"\#ffffff"${else}"\#ff0000"${endif} },
   { "full_text" : "RAM ${membar} ${memperc}%" , "color" :
     ${if_match ${memperc}<90}"\#ffffff"${else}"\#ff0000"${endif} },
   { "full_text" : "${loadavg 1} ${cpu cpu0}%", "color" : ${if_match ${loadavg 1}<2}"\#ffffff"${else}"\#ff0000"${endif} },
