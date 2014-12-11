@@ -40,7 +40,7 @@ TEXT
 # JSON for i3bar
 # ipv6, /, dhcp, vpn, w, e, bat, temp, load, cpu, date
 
- [{ "full_text" : "${exec curl -s http://www.rssweather.com/wx/de/munich/wx.php | sed 's/>\s</>\n</g' | grep '"summary"' | awk '{print $2}' | cut -d'>' -f2} ${exec curl -s http://www.rssweather.com/wx/de/munich/wx.php | sed 's/>\s</>\n</g' | grep '"summary"' | awk '{print $5}' | cut -d'&' -f1}C" },
+ [{ "full_text" : "${exec curl -s http://www.rssweather.com/wx/de/munich/wx.php | sed 's/>\s</>\n</g' | grep '"summary"' | sed 's/></> </' | awk -F'>' '{print $2}' | awk -F'<' '{print $1}'}${exec curl -s http://www.rssweather.com/wx/de/munich/wx.php | sed 's/>\s</>\n</g' | grep '"summary"' |  sed 's/></> </' | awk -F'<p' '{print $3}' | sed 's/.*:\s\(.*\)&.*/\1/'}C" },
   { "full_text" : "/home ${fs_free /home}" , "color" : "\#ffffff" },
   { "full_text" : "/ ${fs_free /}" , "color" : "\#ffffff" },
   { "full_text" : "${if_up tun0}${addr tun0}${else}VPN${endif}" , "color" : ${if_up tun0} "\#00ff00"${else}"\#ff0000"${endif} },
