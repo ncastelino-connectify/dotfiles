@@ -1,0 +1,15 @@
+#!/bin/bash
+# Note: get jq to parse json
+
+units="metric" # or imperial
+CF="C" # or Farenheit
+ipinfo=$(curl -s ipinfo.io)
+lat=$(echo "$ipinfo" | jq .loc | sed 's/"\(.*\),\(.*\)"/\1/')
+lon=$(echo "$ipinfo" | jq .loc | sed 's/"\(.*\),\(.*\)"/\2/')
+
+owm=$(curl -s http://api.openweathermap.org/data/2.5/weather\?lat="$lat"\&lon="$lon"\&units="$units")
+desc=$(echo "$owm" | jq .weather[0].description | sed 's/"//g')
+temp=$(echo "$owm" | jq .main.temp)
+temp="$temp°$CF"
+
+echo "$desc - $temp"
