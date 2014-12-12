@@ -12,4 +12,4 @@ desc=$(echo "$owm" | jq .weather[0].description | sed 's/"//g')
 temp=$(echo "$owm" | jq .main.temp)
 temp="$temp°$CF"
 
-echo "$desc - $temp"
+echo "$desc: $temp"
