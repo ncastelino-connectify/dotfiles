@@ -42,8 +42,7 @@ TEXT
 
  [
   { "full_text" : "${exec ~/dotfiles/.i3/weather}" },
-  { "full_text" : "/home ${fs_free /home}" , "color" : "\#ffffff" },
-  { "full_text" : "/ ${fs_free /}" , "color" : "\#ffffff" },
+  { "full_text" : "/home ${fs_free /home} / ${fs_free /}" , "color" : "\#ffffff" },
   { "full_text" : "${if_up tun0}${addr tun0}${else}VPN${endif}" , "color" : ${if_up tun0} "\#00ff00"${else}"\#ff0000"${endif} },
   { "full_text" : "W${if_up wlan0}: ${wireless_link_qual_perc wlan0}% @ ${wireless_essid wlan0} ${addr wlan0}${else}${endif}" , "color" : ${if_up wlan0} "\#00ff00"${else}"\#ff0000"${endif} },
   { "full_text" : "E${if_up eth0}: ${addr eth0} [${totaldown eth0}/${totalup eth0}]${else}${endif}" , "color" : ${if_up eth0} "\#00ff00"${else}"\#ff0000"${endif} },
