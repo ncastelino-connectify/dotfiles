@@ -46,7 +46,7 @@ TEXT
   { "full_text" : "${if_up tun0}${addr tun0}${else}VPN${endif}" , "color" : ${if_up tun0} "\#00ff00"${else}"\#ff0000"${endif} },
   { "full_text" : "W${if_up wlan0}:${wireless_link_qual_perc wlan0}% @ ${wireless_essid wlan0} ${addr wlan0} [${totaldown wlan0}/${totalup wlan0}]${else}${endif}" , "color" : ${if_up wlan0} "\#00ff00"${else}"\#ff0000"${endif} },
   { "full_text" : "E${if_up eth0}: ${addr eth0} [${totaldown eth0}/${totalup eth0}]${else}${endif}" , "color" : ${if_up eth0} "\#00ff00"${else}"\#ff0000"${endif} },
-  { "full_text" : "${if_match ${exec acpi -b | grep -i 'charging' | wc -l }>0 }CHR${else}BAT ${endif} ${exec acpi -b | sed 's/.*,\s\([0-9][0-9]*\)%.*/\1/'}%" , "color" :
+  { "full_text" : "${if_match ${exec acpi -b | grep 'Charging' | wc -l }>0 }CHR${else}BAT${endif} ${exec acpi -b | sed 's/.*,\s\([0-9][0-9]*\)%.*/\1/'}%" , "color" :
     ${if_match ${exec acpi -b | sed 's/.*,\s\([0-9][0-9]*\)%.*/\1/'}<30}"\#ff0000"${else}"\#ffffff"${endif} },
   { "full_text" : "T${acpitemp}" , "color" :
     ${if_match ${acpitemp}<60}"\#ffffff"${else}"\#ff0000"${endif} },
