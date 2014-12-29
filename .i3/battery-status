@@ -1,0 +1,16 @@
+#!/bin/bash
+
+blurb=$(acpi -b)
+status=$(echo "$blurb" | awk '{print $3}' | sed -e 's/.$//')
+percen=$(echo "$blurb" | awk '{print $4}')
+displayStatus=""
+
+if [ "x$status" == "xFull" ]; then
+	displayStatus="FULL"
+elif [ "x$status" == "xCharging" ]; then
+	displayStatus="CHR"
+elif [ "x$status" == "xDischarging" ]; then
+	displayStatus="BAT"
+fi
+
+echo "$displayStatus $percen"
