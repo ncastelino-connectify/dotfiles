@@ -11,6 +11,8 @@ elif [ "x$status" == "xCharging" ]; then
 	displayStatus="CHR"
 elif [ "x$status" == "xDischarging" ]; then
 	displayStatus="BAT"
+else
+	displayStatus="$status"
 fi
 
 echo "$displayStatus $percen"
