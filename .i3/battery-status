@@ -2,7 +2,7 @@
 
 blurb=$(acpi -b)
 status=$(echo "$blurb" | awk '{print $3}' | sed -e 's/.$//')
-percen=$(echo "$blurb" | awk '{print $4}')
+percen=$(echo "$blurb" | awk '{print $4}' | sed -e 's/,//')
 displayStatus=""
 
 if [ "x$status" == "xFull" ]; then
