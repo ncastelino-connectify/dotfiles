@@ -4,11 +4,18 @@ if [ -r "$HOME/.dbus/Xdbus" ]; then
 	. "$HOME/.dbus/Xdbus"
 fi
 
-if [ $(acpi -b | grep Discharging | sed 's/.*Discharging,\s\([0-9]*\)%.*/\1/') -lt 25 ]; then 
-	notify-send --urgency=CRITICAL 'BATTERY IS LOW; DO SOMETHING NOW'
+outline=$(acpi -b)
+percen=$(echo "$outline" | sed 's/.*,\s\([0-9]*\)%.*/\1/')
+
+if [ $(echo "$outline" | grep Discharging | wc -l) -eq 1 ]; then 
+	if [ "$percen" -lt 25 ]; then
+		notify-send --urgency=CRITICAL 'BATTERY IS LOW; DO SOMETHING NOW'
+	fi
 	exit 0
-elif [ $(acpi -b | grep Charging | sed 's/.*Charging,\s\([0-9]*\)%.*/\1/') -gt 95 ]; then 
-	notify-send --urgency=CRITICAL 'BATTERY IS CHARGED; RRAAHHH'
+elif [ $(echo "$outline" | grep Charging | wc -l) -eq 1 ]; then 
+	if [ "$percen" -gt 95 ]; then
+		notify-send --urgency=CRITICAL 'BATTERY IS CHARGED; RRAAHHH'
+	fi
 	exit 0
 elif [ $(acpi -b | grep -i FULL | wc -l) -eq 1 ]; then 
 	notify-send --urgency=CRITICAL 'BATTERY IS CHARGED; RRAAHHH'
