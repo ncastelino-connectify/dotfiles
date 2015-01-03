@@ -53,5 +53,5 @@ TEXT
   { "full_text" : "RAM ${membar} ${memperc}%" , "color" :
     ${if_match ${memperc}<90}"\#ffffff"${else}"\#ff0000"${endif} },
   { "full_text" : "${loadavg 1} ${cpu cpu0}%", "color" : ${if_match ${loadavg 1}<2}"\#ffffff"${else}"\#ff0000"${endif} },
-  { "full_text" : "Vol: ${exec pactl list sinks | grep 'Volume: 0:' | awk '{print $3}'}" },
+  { "full_text" : "Vol: ${exec ~/dotfiles/.i3/volume}" },
   { "full_text" : "[ ${exec date +%F} ${exec date +%T} ]" } ],
