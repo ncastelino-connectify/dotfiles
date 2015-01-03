@@ -24,10 +24,10 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec xfce4-terminal
 
 # start chrome/firefox/whatever browser
-bindsym $mod+g exec google-chrome
+bindsym $mod+g exec firefox #google-chrome
 
 # kill focused window
 bindsym $mod+Shift+q kill
