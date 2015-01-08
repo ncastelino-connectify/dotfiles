@@ -1,6 +1,11 @@
 #!/bin/bash
 
-if [ -r "$HOME/.dbus/Xdbus" ]; then
+if [ -d "$HOME/.dbus/session-bus" ]; then
+	cd "$HOME/.dbus/session-bus"
+	for i in $(ls); do
+		export $(cat "$i" | grep DBUS_SESSION_BUS_ADDRESS=)
+	done
+elif [ -r "$HOME/.dbus/Xdbus" ]; then
 	. "$HOME/.dbus/Xdbus"
 fi
 
