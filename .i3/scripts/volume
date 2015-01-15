@@ -1,18 +1,13 @@
 #!/bin/bash
 
-sink=1
+volume=''
 
-for i in $(pactl list sinks | sed -e 's/\s//g' | grep -i 'state'); do
-	echo "$i" | grep -i 'running' > /dev/null
-	if [ "$?" -eq 0 ]; then
-		break
-	fi
-	sink=$(echo "$sink+1" | bc -l)
-done
-
-for i in $(pactl list sinks | sed -e 's/\s//g' | grep -i 'volume' | grep -i 'front'); do
-	sink=$(echo "$sink-1" | bc -l)
-	if [ "$sink" -eq 0 ]; then
-		echo "$i" | sed -e 's/.*\/\([0-9]*\)%.*/\1%/'
+for i in $(amixer get Master | grep -o "\[.*%\]" | sed -e 's/\[//' -e 's/\]//'); do
+	if [ "x$volume" != "x" ]; then
+		volume="$volume $i"
+	else
+		volume="$i"
 	fi
 done
+
+echo "$volume"
