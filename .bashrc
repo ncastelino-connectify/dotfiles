@@ -131,6 +131,7 @@ alias get='sudo apt-get install'
 alias pick='sudo apt-cache search'
 alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade'
+alias vpn='sudo openconnect vpn.drexel.edu'
 
 wikiCall() {
     # Search wikipedia
