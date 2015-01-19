@@ -53,4 +53,4 @@ TEXT
     ${if_match ${memperc}<90}"\#ffffff"${else}"\#ff0000"${endif} },
   { "full_text" : "  ${loadavg 1} ${cpu cpu0}%", "color" : ${if_match ${loadavg 1}<2}"\#ffffff"${else}"\#ff0000"${endif} },
   { "full_text" : "  ${exec ~/dotfiles/.i3/scripts/volume}" },
-  { "full_text" : "[${exec date +%F} ${exec date +%T}]" } ],
+  { "full_text" : "[${execi 2700 ~/dotfiles/.i3/scripts/icanhazip} | ${exec date +%F} ${exec date +%T}]" } ],
