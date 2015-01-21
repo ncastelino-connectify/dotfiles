@@ -1,6 +1,8 @@
 All of my dotfiles
 
-Notes:
-.i3/check-battery will work with a cronjob like
-	* * * * * /home/neil/dotfiles/.i3/check-battery
+User crontab:
+* * * * * /home/neil/dotfiles/.i3/check-battery
 
+
+Root crontab:
+0 * * * *	apt-get update
