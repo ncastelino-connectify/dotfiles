@@ -13,6 +13,7 @@ else
 
 	owm=$(curl -s http://api.openweathermap.org/data/2.5/weather\?lat="$lat"\&lon="$lon"\&units="$units")
 	desc=$(echo "$owm" | jq .weather[0].description | sed 's/"//g')
+	area=$(echo "$owm" | jq .sys.country | sed 's/"//g')
 	temp=$(echo "$owm" | jq .main.temp)
 	if [ "x$(echo $LC_NUMERIC)" == "xde_DE.UTF-8" ]; then
 		temp=$(echo "$temp" | sed 's/\./,/')
@@ -20,5 +21,5 @@ else
 	temp=$(printf "%0.2f\n" "$temp")
 	temp="$temp°$CF"
 
-	echo "$desc: $temp"
+	echo "[$area] $desc: $temp"
 fi
