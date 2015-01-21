@@ -1,3 +1,8 @@
 #!/bin/bash
 
-curl http://icanhazip.com/
+wget --spider https://icanhazip.com/ &> /dev/null
+if [ "$?" != 0 ]; then
+	echo "IcanHazFailed"
+else
+	curl -4 https://icanhazip.com/
+fi

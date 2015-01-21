@@ -1,19 +1,24 @@
 #!/bin/bash
 # Note: get jq to parse json
 
-units="metric" # or imperial
-CF="C" # or Farenheit
-ipinfo=$(curl -s ipinfo.io)
-lat=$(echo "$ipinfo" | jq .loc | sed 's/"\(.*\),\(.*\)"/\1/')
-lon=$(echo "$ipinfo" | jq .loc | sed 's/"\(.*\),\(.*\)"/\2/')
+wget --spider ipinfo.io &> /dev/null
+if [ "$?" != 0 ]; then
+	echo "Weather scrape failed"
+else
+	units="metric" # or imperial
+	CF="C" # or Farenheit
+	ipinfo=$(curl -s ipinfo.io)
+	lat=$(echo "$ipinfo" | jq .loc | sed 's/"\(.*\),\(.*\)"/\1/')
+	lon=$(echo "$ipinfo" | jq .loc | sed 's/"\(.*\),\(.*\)"/\2/')
 
-owm=$(curl -s http://api.openweathermap.org/data/2.5/weather\?lat="$lat"\&lon="$lon"\&units="$units")
-desc=$(echo "$owm" | jq .weather[0].description | sed 's/"//g')
-temp=$(echo "$owm" | jq .main.temp)
-if [ "x$(echo $LC_NUMERIC)" == "xde_DE.UTF-8" ]; then
-	temp=$(echo "$temp" | sed 's/\./,/')
+	owm=$(curl -s http://api.openweathermap.org/data/2.5/weather\?lat="$lat"\&lon="$lon"\&units="$units")
+	desc=$(echo "$owm" | jq .weather[0].description | sed 's/"//g')
+	temp=$(echo "$owm" | jq .main.temp)
+	if [ "x$(echo $LC_NUMERIC)" == "xde_DE.UTF-8" ]; then
+		temp=$(echo "$temp" | sed 's/\./,/')
+	fi
+	temp=$(printf "%0.2f\n" "$temp")
+	temp="$temp°$CF"
+
+	echo "$desc: $temp"
 fi
-temp=$(printf "%0.2f\n" "$temp")
-temp="$temp°$CF"
-
-echo "$desc: $temp"
