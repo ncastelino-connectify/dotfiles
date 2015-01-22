@@ -41,8 +41,8 @@ TEXT
   { "full_text" : "${execi 500 ~/dotfiles/.i3/scripts/status-weather} ", "color" : "\#999999" },
   { "full_text" : " /home ${fs_free /home} / ${fs_free /} " , "color" : "\#999999" },
   { "full_text" : " ${if_up tun0}  ${addr tun0}${else}${endif} " , "color" : ${if_up tun0} "\#00ff00"${else}"\#ff0000"${endif} },
-  { "full_text" : " ${if_up wlan0} ${wireless_link_qual_perc wlan0}%[${wireless_essid wlan0}]${addr wlan0}[ ${totaldown wlan0}  ${totalup wlan0}]${else}${endif} " , "color" : ${if_up wlan0} "\#00ff00"${else}"\#ff0000"${endif} },
-  { "full_text" : "  ${if_up eth0} ${addr eth0} [ ${totaldown eth0}  ${totalup eth0}]${else}${endif} " , "color" : ${if_up eth0} "\#00ff00"${else}"\#ff0000"${endif} },
+  { "full_text" : " ${if_up wlan0} ${wireless_link_qual_perc wlan0}%[${wireless_essid wlan0}]${addr wlan0}[ ${totaldown wlan0}  ${totalup wlan0}]${else}${endif} " , "color" : ${if_up wlan0} "\#00ff00"${else}"\#ff0000"${endif} },
+  { "full_text" : "  ${if_up eth0} ${addr eth0} [ ${totaldown eth0}  ${totalup eth0}]${else}${endif} " , "color" : ${if_up eth0} "\#00ff00"${else}"\#ff0000"${endif} },
   { "full_text" : " ${exec ~/dotfiles/.i3/scripts/status-battery} ", "color" :
     ${if_match ${exec acpi -b | sed 's/.*,\s\([0-9][0-9]*\)%.*/\1/'}<30}"\#ff0000"${else}"\#999999"${endif} },
   { "full_text" : " ${acpitemp} " , "color" :
