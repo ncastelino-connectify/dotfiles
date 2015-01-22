@@ -52,5 +52,5 @@ TEXT
   { "full_text" : "   ${loadavg 1} ${cpu cpu0}% ", "color" : ${if_match ${loadavg 1}<2}"\#999999"${else}"\#ff0000"${endif} },
   { "full_text" : "   ${exec cat ~/dotfiles/.i3/scripts/apt.stat} ", "color" : ${if_match ${exec cat ~/dotfiles/.i3/scripts/apt.stat}>0}"\#ffa500"${else}"\#999999"${endif}  },
   { "full_text" : "   ${exec ~/dotfiles/.i3/scripts/status-volume} ", "color" : "\#999999"  },
-  { "full_text" : "[${execi 2700 ~/dotfiles/.i3/scripts/status-icanhazip} | ${exec date +%a} ${exec date +%F} ${exec date +%T}]" }
+  { "full_text" : "[${execi 2700 ~/dotfiles/.i3/scripts/status-icanhazip} | ${exec date +%a} ${exec date +%F} ${exec date +%T}]", "color" : "\#00995C" }
  ],
