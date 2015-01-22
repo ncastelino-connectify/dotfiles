@@ -36,9 +36,7 @@ cpu_avg_samples 2
 
 # Stuff after 'TEXT' will be formatted on screen
 TEXT
-
 # JSON for i3bar
-# unicode font is "ttf-font-awesome" or something
  [
   { "full_text" : "${execi 500 ~/dotfiles/.i3/scripts/weather} " },
   { "full_text" : " /home ${fs_free /home} / ${fs_free /} " , "color" : "\#ffffff" },
@@ -53,4 +51,5 @@ TEXT
     ${if_match ${memperc}<90}"\#ffffff"${else}"\#ff0000"${endif} },
   { "full_text" : "   ${loadavg 1} ${cpu cpu0}% ", "color" : ${if_match ${loadavg 1}<2}"\#ffffff"${else}"\#ff0000"${endif} },
   { "full_text" : "   ${exec ~/dotfiles/.i3/scripts/volume} " },
-  { "full_text" : "[${execi 2700 ~/dotfiles/.i3/scripts/icanhazip} | ${exec date +%a} ${exec date +%F} ${exec date +%T}]" } ],
+  { "full_text" : "[${execi 2700 ~/dotfiles/.i3/scripts/icanhazip} | ${exec date +%a} ${exec date +%F} ${exec date +%T}]" }
+ ],
