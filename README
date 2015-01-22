@@ -1,8 +1,9 @@
-All of my dotfiles
-
 User crontab:
-* * * * * /home/neil/dotfiles/.i3/check-battery
+	* * * * * /home/neil/dotfiles/.i3/check-battery
 
 
 Root crontab:
-0 * * * *	apt-get update
+	0 * * * *	apt-get update
+
+Icons used: https://github.com/FortAwesome/Font-Awesome
+	cp -i fonts/* /usr/share/fonts/opentype/
