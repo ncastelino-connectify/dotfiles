@@ -24,7 +24,7 @@ font pango:DejaVu Sans Mono 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec xfce4-terminal
 
 # start chrome/firefox/whatever browser
 bindsym $mod+g exec firefox
@@ -50,10 +50,9 @@ bindsym $mod+z exec  pactl set-sink-volume $(pactl list | grep 'Sink #' | awk -F
 bindsym $mod+x exec  pactl set-sink-volume $(pactl list | grep 'Sink #' | awk -F'#' '{print $2}' | head -n 1) -- -10%
 
 # scrot
-bindsym $mod+y exec scrot ~/Documents/%Y-%m-%d--%s_$wx$h_scrot.png
+bindsym $mod+y exec scrot ~/images/%Y-%m-%d--%s_$wx$h_scrot.png
 
 # start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run
 bindsym $mod+d exec dmenu_run  -nb '#000000' -nf '#FFFFFF' -sb '#222222' -sf '#0088ff'
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -174,5 +173,5 @@ bar {
 	position top
 }
 
-exec --no-startup-id feh --bg-scale wimage.png
+exec --no-startup-id feh --bg-scale ~/tree.jpg
 exec --no-startup-id nm-applet
