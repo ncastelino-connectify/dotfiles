@@ -1,0 +1,13 @@
+#!/bin/bash
+
+sink="-1"
+
+for i in $(pactl list sinks | sed 's/\s//g' | grep -i state); do
+	sink=$(echo "$sink + 1" | bc -l)
+	echo "$i" | grep -i running &> /dev/null
+	if (( $? == 0 )); then
+		break;
+	fi
+done
+
+echo "$sink"

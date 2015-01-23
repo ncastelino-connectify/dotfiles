@@ -18,7 +18,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
-font pango:DejaVu Sans Mono 9
+font pango:DejaVu Sans Mono 7.5
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -44,7 +44,7 @@ bindsym $mod+i exec i3lock -i ~/wimage.png -c 000000
 bindsym $mod+p exec pcmanfm
 
 # +10 vol
-bindsym $mod+z exec pactl set-sink-volume 1 -- +10%
+bindsym $mod+z exec pactl set-sink-volume $(/home/neil/dotfiles/.i3/scripts/status-pactl-sink) -- +10%
 
 # -10 vol
 bindsym $mod+x exec pactl set-sink-volume 1 -- -10%
@@ -177,3 +177,4 @@ exec --no-startup-id feh --bg-scale ~/tree.jpg
 exec --no-startup-id nm-applet
 exec --no-startup-id ~/.dropbox-dist/dropboxd &
 exec --no-startup-id ~/dotfiles/.i3/fix-notify-send-w-dbus
+exec --no-startup-id wicd-client -t &
