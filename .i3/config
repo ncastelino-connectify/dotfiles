@@ -47,7 +47,7 @@ bindsym $mod+p exec pcmanfm
 bindsym $mod+z exec pactl set-sink-volume $(/home/neil/dotfiles/.i3/scripts/status-pactl-sink) -- +10%
 
 # -10 vol
-bindsym $mod+x exec pactl set-sink-volume 1 -- -10%
+bindsym $mod+x exec pactl set-sink-volume $(/home/neil/dotfiles/.i3/scripts/status-pactl-sink) -- -10%
 
 # scrot
 bindsym $mod+y exec scrot ~/images/%Y-%m-%d--%s_$wx$h_scrot.png
