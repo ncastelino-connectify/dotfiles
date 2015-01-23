@@ -3,20 +3,20 @@
 me=$(id -u)
 statFile="/home/neil/dotfiles/.i3/scripts/apt.stat"
 
-if [ "x$1" == "x" ]; then
-	echo "Usage: ./$0 {update|noupgrade}"
-	exit 2
-fi
-
-if (( $me == 0 )); then
-	if [ "x$1" == "xupdate" ]; then
-		apt-get update &> /dev/null
-	elif [ "x$1" == "xnoupgrade" ]; then
-		out=$(apt-get upgrade --assume-no)
-		echo "$out" | grep "[0-9]* upgraded," | awk '{print $1}' > "$statFile"
-	fi
-	exit 0
-else
+if (( $me != 0 )); then
 	echo "You need to be root in order to to this"
 	exit 1
 fi
+
+if [ "x$1" == "x" ]; then
+	echo "Usage: $0 {update|noupgrade}"
+	exit 2
+fi
+
+if [ "x$1" == "xupdate" ]; then
+	apt-get update &> /dev/null
+elif [ "x$1" == "xnoupgrade" ]; then
+	out=$(apt-get upgrade --assume-no)
+	echo "$out" | grep "[0-9]* upgraded," | awk '{print $1}' > "$statFile"
+fi
+exit 0
