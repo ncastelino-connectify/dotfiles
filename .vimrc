@@ -12,7 +12,6 @@ set nocompatible
 set nobackup
 set noswapfile
 
-set number
 set titlestring=%f
 set title
 set cindent
