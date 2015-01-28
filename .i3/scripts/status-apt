@@ -20,7 +20,7 @@ elif [ "x$1" == "xnoupgrade" ]; then
 	echo "$out" | grep "[0-9]* upgraded," | awk '{print $1}' > "$statFile"
 	check=$(cat "$statFile")
 	if [ "x$check" == "x" ]; then
-		echo "0" > "$statFile"
+		echo "-1" > "$statFile"
 	fi
 fi
 exit 0
