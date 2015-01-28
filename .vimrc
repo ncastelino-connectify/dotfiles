@@ -23,6 +23,13 @@ set linebreak
 set wildmode=longest,list,full
 set wildmenu
 
+set textwidth=80
+set colorcolumn=+1
+
+set t_Co=256
+syntax on
+colorscheme wombat256i
+
 " reformat file using perltidy
 noremap <Leader>t :%!perltidy -q<CR> 
 
