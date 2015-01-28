@@ -18,5 +18,9 @@ if [ "x$1" == "xupdate" ]; then
 elif [ "x$1" == "xnoupgrade" ]; then
 	out=$(apt-get upgrade --assume-no)
 	echo "$out" | grep "[0-9]* upgraded," | awk '{print $1}' > "$statFile"
+	check=$(cat "$statFile")
+	if [ "x$check" == "x" ]; then
+		echo "0" > "$statFile"
+	fi
 fi
 exit 0
