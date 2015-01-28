@@ -1,7 +1,6 @@
 User crontab:
 	* * * * *	/home/neil/dotfiles/.i3/check-battery
 
-
 Root crontab:
 	0 * * * *	/home/neil/dotfiles/.i3/scripts/status-apt update
 	*/5 * * * *	/home/neil/dotfiles/.i3/scripts/status-apt noupgrade
