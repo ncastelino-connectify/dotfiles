@@ -1,5 +1,6 @@
 User crontab:
 	* * * * *	/home/neil/dotfiles/.i3/check-battery
+	*/10 * * * *	/home/neil/dotfiles/repo-update
 
 Root crontab:
 	0 * * * *	/home/neil/dotfiles/.i3/scripts/status-apt update
@@ -7,3 +8,5 @@ Root crontab:
 
 Icons used: https://github.com/FortAwesome/Font-Awesome
 	cp -i fonts/* /usr/share/fonts/opentype/
+		      or
+	apt-get install fonts-font-awesome
