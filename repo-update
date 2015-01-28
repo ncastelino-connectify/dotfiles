@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cd $(pwd) # Just to make sure..
+blurb=$(git pull)
+
+echo "$blurb" | grep -i error
+
+if (( $? == 0 )); then
+	echo "$blurb"
+fi
