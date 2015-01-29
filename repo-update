@@ -1,10 +1,15 @@
 #!/bin/bash
 
-cd $(pwd) # Just to make sure..
+repoDir='/home/neil/dotfiles/'
+cd "$repoDir"
+
 blurb=$(git pull)
 
 echo "$blurb" | grep -i error
+E="$?"
+echo "$blurb" | grep -i fatal
+F="$?"
 
-if (( $? == 0 )); then
+if (( $E == 0 )) || (( $F ==0 )); then
 	echo "$blurb"
 fi
