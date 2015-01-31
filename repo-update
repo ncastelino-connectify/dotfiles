@@ -3,10 +3,15 @@
 repoDir='/home/neil/dotfiles/'
 cd "$repoDir"
 
-status=$(git status -uno)
-echo "$status" | grep -i 'up-to-date' &> /dev/null
+LOCAL=$(git rev-parse @{0})
+REMOTE=$(git rev-parse @{u})
+BASE=$(git merge-base @ @{u})
 
-if (( $? != 0 )); then
+if [ $LOCAL = $REMOTE ]; then
+	echo "Up-to-date" &> /dev/null
+elif [ $LOCAL = $BASE ]; then
+	echo "Need to pull" &> /dev/null
+
 	blurb=$(git pull)
 
 	echo "$blurb" | grep -i error
@@ -20,4 +25,8 @@ if (( $? != 0 )); then
 	else
 		notify-send 'Pulled updates to dotfiles'
 	fi
+elif [ $REMOTE = $BASE ]; then
+	echo "Need to push" &> /dev/null
+else
+	echo "Diverged" &> /dev/null
 fi
