@@ -5,6 +5,7 @@ User crontab:
 Root crontab:
 	0 * * * *	/home/neil/dotfiles/.i3/scripts/status-apt update
 	*/5 * * * *	/home/neil/dotfiles/.i3/scripts/status-apt noupgrade
+	0 */2 * * *	update-flashplugin-nonfree --install
 
 Icons used: https://github.com/FortAwesome/Font-Awesome
 	cp -i fonts/* /usr/share/fonts/opentype/
