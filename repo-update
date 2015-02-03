@@ -3,14 +3,16 @@
 repoDir='/home/neil/dotfiles/'
 cd "$repoDir"
 
+git fetch origin &> /dev/null
+
 LOCAL=$(git rev-parse @{0})
 REMOTE=$(git rev-parse @{u})
 BASE=$(git merge-base @ @{u})
 
 if [ $LOCAL = $REMOTE ]; then
-	echo "Up-to-date" &> /dev/null
+	echo "Up-to-date"
 elif [ $LOCAL = $BASE ]; then
-	echo "Need to pull" &> /dev/null
+	echo "Need to pull"
 
 	blurb=$(git pull)
 
@@ -26,7 +28,7 @@ elif [ $LOCAL = $BASE ]; then
 		notify-send 'Pulled updates to dotfiles'
 	fi
 elif [ $REMOTE = $BASE ]; then
-	echo "Need to push" &> /dev/null
+	echo "Need to push"
 else
-	echo "Diverged" &> /dev/null
+	echo "Diverged"
 fi
