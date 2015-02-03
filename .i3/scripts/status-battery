@@ -13,5 +13,5 @@ elif [ "x$status" == "xDischarging" ]; then
 elif [ "x$status" == "xUnknown" ]; then
 	echo "UNK $percen"
 else
-	echo "$status"
+	echo "$status $percen"
 fi
