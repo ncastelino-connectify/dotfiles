@@ -3,18 +3,15 @@
 blurb=$(acpi -b)
 status=$(echo "$blurb" | awk '{print $3}' | sed -e 's/.$//')
 percen=$(echo "$blurb" | awk '{print $4}' | sed -e 's/,//')
-displayStatus=""
 
 if [ "x$status" == "xFull" ]; then
-	displayStatus="FULL"
+	echo "FULL"
 elif [ "x$status" == "xCharging" ]; then
-	displayStatus="CHR"
+	echo "CHR $percen"
 elif [ "x$status" == "xDischarging" ]; then
-	displayStatus="BAT"
+	echo "BAT $percen"
 elif [ "x$status" == "xUnknown" ]; then
-	displayStatus="UNK"
+	echo "UNK $percen"
 else
-	displayStatus="$status"
+	echo "$status"
 fi
-
-echo "$displayStatus $percen"
