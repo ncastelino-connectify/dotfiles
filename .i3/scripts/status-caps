@@ -1,0 +1,9 @@
+#!/bin/bash
+
+status=$(xset q | grep 'Caps Lock' | sed 's/.*Caps Lock:[ ]*\([^ ]*\).*/\1/')
+
+if [ "x$status" == "xoff" ]; then
+	echo "00ffff"
+else
+	echo "ff0000"
+fi
