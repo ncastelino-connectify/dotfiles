@@ -121,6 +121,9 @@ bindsym $mod+8 workspace Acht
 bindsym $mod+9 workspace Neun
 bindsym $mod+0 workspace Zehn
 
+# switch to urgent window
+bindsym $mod+u [urgent=latest] focus
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace Eins
 bindsym $mod+Shift+2 move container to workspace Zwei
@@ -171,6 +174,16 @@ bindsym $mod+r mode "resize"
 bar {
         status_command $HOME/dotfiles/.i3/conky/conky-i3bar
 	position top
+
+	colors {
+		background #000000
+		statusline #ffffff
+
+		focused_workspace  #ffffff #285577
+		active_workspace   #ffffff #333333
+		inactive_workspace #888888 #222222
+		urgent_workspace   #ffffff #900000
+	}
 }
 
 exec --no-startup-id feh --bg-scale ~/tree.jpg
