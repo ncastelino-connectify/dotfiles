@@ -110,28 +110,28 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace Eins
+bindsym $mod+2 workspace Zwei
+bindsym $mod+3 workspace Drei
+bindsym $mod+4 workspace Vier
+bindsym $mod+5 workspace Fünf
+bindsym $mod+6 workspace Sechs
+bindsym $mod+7 workspace Sieben
+bindsym $mod+8 workspace Acht
+bindsym $mod+9 workspace Neun
+bindsym $mod+0 workspace Zehn
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace Eins
+bindsym $mod+Shift+2 move container to workspace Zwei
+bindsym $mod+Shift+3 move container to workspace Drei
+bindsym $mod+Shift+4 move container to workspace Vier
+bindsym $mod+Shift+5 move container to workspace Fünf
+bindsym $mod+Shift+6 move container to workspace Sechs
+bindsym $mod+Shift+7 move container to workspace Sieben
+bindsym $mod+Shift+8 move container to workspace Acht
+bindsym $mod+Shift+9 move container to workspace Neun
+bindsym $mod+Shift+0 move container to workspace Zehn
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
