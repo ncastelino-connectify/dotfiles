@@ -22,5 +22,9 @@ elif [ "x$1" == "xnoupgrade" ]; then
 	if [ "x$check" == "x" ]; then
 		echo "-1" > "$statFile"
 	fi
+else
+	echo "Usage: $0 {update|noupgrade}"
+	exit 3
 fi
+
 exit 0
