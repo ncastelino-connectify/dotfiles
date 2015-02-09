@@ -2,7 +2,7 @@
 # Note: get jq to parse json
 
 wget --spider ipinfo.io &> /dev/null
-if [ "$?" != 0 ]; then
+if (( $? != 0 )); then
 	echo "Weather scrape failed"
 else
 	units="metric" # or imperial
