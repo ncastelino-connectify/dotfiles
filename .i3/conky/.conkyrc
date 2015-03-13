@@ -38,7 +38,7 @@ cpu_avg_samples 2
 TEXT
 # JSON for i3bar
  [
-  { "full_text" : "${execi 500 ~/dotfiles/.i3/scripts/status-weather} ", "color" : "\#ffffff" },
+  { "full_text" : "${execi 500 timeout -k 12 10 ~/dotfiles/.i3/scripts/status-weather} ", "color" : "\#ffffff" },
   { "full_text" : " /home ${fs_free /home} / ${fs_free /} " , "color" : "\#ffffff" },
   { "full_text" : " ${if_up tun0}  ${addr tun0}${else}${endif} " , "color" : ${if_up tun0} "\#00ff00"${else}"\#ff0000"${endif} },
   { "full_text" : " ${if_up wlan0} ${wireless_link_qual_perc wlan0}%[${wireless_essid wlan0}][ ${totaldown wlan0}  ${totalup wlan0}]${else}${endif} " , "color" : ${if_up wlan0} "\#00ff00"${else}"\#ff0000"${endif} },
