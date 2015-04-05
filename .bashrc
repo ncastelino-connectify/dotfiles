@@ -130,6 +130,7 @@ alias pick='sudo apt-cache search'
 alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade'
 alias vpn='sudo openconnect vpn.drexel.edu'
+alias mocp='mocp -T .moc/themes/dante'
 
 wikiCall() {
     # Search wikipedia
