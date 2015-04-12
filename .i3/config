@@ -50,7 +50,7 @@ bindsym $mod+z exec pactl set-sink-volume $(/home/neil/dotfiles/.i3/scripts/stat
 bindsym $mod+x exec pactl set-sink-volume $(/home/neil/dotfiles/.i3/scripts/status-pactl-sink) -- -10%
 
 # scrot
-bindsym $mod+y exec scrot ~/images/%Y-%m-%d--%s_$wx$h_scrot.png
+bindsym $mod+y exec scrot ~/images/%Y-%m-%d--%s_$wx$h_scrot.png && notify-send "Screenshot Captured"
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run  -nb '#000000' -nf '#FFFFFF' -sb '#222222' -sf '#0088ff'
