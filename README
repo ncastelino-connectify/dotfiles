@@ -13,11 +13,13 @@ Icons used: https://github.com/FortAwesome/Font-Awesome
 	apt-get install fonts-font-awesome
 
 Symlinks used:
-	[18:15:03 - neil@riot ~]$ ll | grep '^l'
-	lrwxrwxrwx  1 neil neil      16 Jan  1 03:03 .bashrc -> dotfiles/.bashrc
-	lrwxrwxrwx  1 neil neil      10 Jan  1 22:27 documents -> Documents/
-	lrwxrwxrwx  1 neil neil      10 Jan  1 22:27 downloads -> Downloads/
-	lrwxrwxrwx  1 neil neil      12 Dec 31 17:50 .i3 -> dotfiles/.i3
-	lrwxrwxrwx  1 neil neil       7 Jan  1 22:28 Pictures -> images/
-	lrwxrwxrwx  1 neil neil      13 Jan 28 18:14 .vim -> dotfiles/.vim
-	lrwxrwxrwx  1 neil neil      15 Jan 16 18:58 .vimrc -> dotfiles/.vimrc
+	[20:26:45 - neil@riot ~]$ l | grep '^l'
+	lrwxrwxrwx  1 neil neil   16 Dec 31 21:03 .bashrc -> dotfiles/.bashrc
+	lrwxrwxrwx  1 neil neil   12 Dec 31 11:50 .i3 -> dotfiles/.i3
+	lrwxrwxrwx  1 neil neil   17 Jan 30 13:35 .inputrc -> dotfiles/.inputrc
+	lrwxrwxrwx  1 neil neil   13 Apr  5 13:54 .moc -> dotfiles/.moc
+	lrwxrwxrwx  1 neil neil   13 Jan 28 12:14 .vim -> dotfiles/.vim
+	lrwxrwxrwx  1 neil neil   15 Jan 16 12:58 .vimrc -> dotfiles/.vimrc
+	lrwxrwxrwx  1 neil neil    7 Jan  1 16:28 Pictures -> images/
+	lrwxrwxrwx  1 neil neil   10 Jan  1 16:27 documents -> Documents/
+	lrwxrwxrwx  1 neil neil   10 Jan  1 16:27 downloads -> Downloads/
