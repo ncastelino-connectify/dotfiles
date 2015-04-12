@@ -119,7 +119,7 @@ export PATH="/home/neil/perl5/bin:$PATH";
 alias l='ls -vlAsh'
 alias urt='cd ~/UrbanTerror42/;./Quake3-UrT.x86_64';
 alias die='sudo shutdown -h'
-alias tux='ssh -X tux'
+alias tux='ssh -X nac78@tux.cs.drexel.edu'
 alias eniac='ssh eniac'
 alias mutt='mutt -F muttrc/.muttrc'
 alias bc='bc -l'
@@ -131,6 +131,7 @@ alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade'
 alias vpn='sudo openconnect vpn.drexel.edu'
 alias mocp='mocp -T .moc/themes/dante'
+alias quit='unset HISTFILE && exit'
 
 wikiCall() {
     # Search wikipedia
