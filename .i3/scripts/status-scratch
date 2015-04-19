@@ -1,0 +1,8 @@
+#!/bin/bash
+
+mount | grep Scratch &> /dev/null
+if (( $? == 0 )); then
+	free=$(df -h | grep Scratch | awk '{print $4}')
+	mountPoint=$(df -h | grep Scratch | awk '{print $1}')
+	echo "$mountPoint $free"
+fi
