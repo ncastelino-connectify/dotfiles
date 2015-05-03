@@ -1,6 +1,8 @@
 User crontab:
-	* * * * *	/home/neil/dotfiles/.i3/check-battery
-	*/10 * * * *	/home/neil/dotfiles/repo-update
+	* * * * *       /home/neil/dotfiles/check-battery
+	*/10 * * * *    /home/neil/dotfiles/repo-update
+	*/10 * * * *    /home/neil/dotfiles/.i3/scripts/status-icanhazip
+	*/5 * * * *     /home/neil/dotfiles/.i3/scripts/status-weather
 
 Root crontab:
 	0 * * * *	/home/neil/dotfiles/.i3/scripts/status-apt update
