@@ -130,7 +130,7 @@ alias pick='sudo apt-cache search'
 alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade && sudo bash -c "echo 0 > /home/neil/dotfiles/.i3/scripts/apt.stat"'
 alias vpn='sudo openconnect vpn.drexel.edu'
-alias mocp='mocp -T .moc/themes/dante'
+alias mocp='mocp -T ~/.moc/themes/dante'
 alias quit='unset HISTFILE && exit'
 
 wikiCall() {
@@ -139,3 +139,5 @@ wikiCall() {
 }
 
 alias wiki=wikiCall
+
+export GOPATH=$HOME/go
