@@ -39,7 +39,7 @@ TEXT
 # JSON for i3bar
  [
   { "full_text" : "${execi 500 timeout -k 12 10 ~/dotfiles/.i3/scripts/status-weather} ", "color" : "\#ffffff" },
-  { "full_text" : " /home ${fs_free /home} / ${fs_free /} ${exec ~/dotfiles/.i3/scripts/status-scratch}" , "color" : "\#ffffff" },
+  { "full_text" : " ${exec ~/dotfiles/.i3/scripts/status-sd}" , "color" : "\#ffffff" },
   { "full_text" : " ${if_up tun0}  ${addr tun0}${else}${endif} " , "color" : ${if_up tun0} "\#00ff00"${else}"\#ff0000"${endif} },
   { "full_text" : " ${if_up wlan0} ${wireless_link_qual_perc wlan0}%[${wireless_essid wlan0}][ ${totaldown wlan0}  ${totalup wlan0}]${else}${endif} " , "color" : ${if_up wlan0} "\#00ff00"${else}"\#ff0000"${endif} },
   { "full_text" : " ${if_up eth0} [ ${totaldown eth0}  ${totalup eth0}]${else}${endif} " , "color" : ${if_up eth0} "\#00ff00"${else}"\#ff0000"${endif} },
