@@ -2,12 +2,13 @@
 
 import os
 
+needed = ["sda", "usb"]
 df_output = [s.split() for s in os.popen("df -h").read().splitlines()]
 
 printables = ""
 
 for x in df_output:
-	if "sd" in x[0]:
+	if any(y in x[0] for y in needed):
 		printables = printables +  "/" + x[5].rsplit('/', 1)[1] \
 				+ ": " +  x[3] + ", "
 
