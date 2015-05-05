@@ -1,15 +1,4 @@
 #!/bin/bash
 
-volume=''
-
-for i in $(amixer get Master | grep -o "\[.*%\]" | sed -e 's/\[//' -e 's/\]//'); do
-	if [ "x$volume" != "x" ]; then
-		if [ "x$volume" != "x$i" ]; then
-			volume="$volume $i"
-		fi
-	else
-		volume="$i"
-	fi
-done
-
-echo "$volume"
+vol=$(pulseaudio-ctl full-status | awk '{print $1}')
+echo "$vol%"
