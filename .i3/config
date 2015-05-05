@@ -44,10 +44,10 @@ bindsym $mod+i exec i3lock -i ~/wimage.png -c 000000
 bindsym $mod+p exec pcmanfm
 
 # +10 vol
-bindsym $mod+z exec pactl set-sink-volume $(/home/neil/dotfiles/.i3/scripts/status-pactl-sink) -- +10%
+bindsym $mod+z exec pulseaudio-ctl up 10
 
 # -10 vol
-bindsym $mod+x exec pactl set-sink-volume $(/home/neil/dotfiles/.i3/scripts/status-pactl-sink) -- -10%
+bindsym $mod+x exec pulseaudio-ctl down 10
 
 # scrot
 bindsym $mod+y exec scrot ~/images/%Y-%m-%d--%s_$wx$h_scrot.png && notify-send "Screenshot Captured"
