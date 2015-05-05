@@ -49,6 +49,9 @@ bindsym $mod+z exec pulseaudio-ctl up 10
 # -10 vol
 bindsym $mod+x exec pulseaudio-ctl down 10
 
+# mute vol
+bindsym $mod+m exec pulseaudio-ctl mute
+
 # scrot
 bindsym $mod+y exec scrot ~/images/%Y-%m-%d--%s_$wx$h_scrot.png && notify-send "Screenshot Captured"
 
