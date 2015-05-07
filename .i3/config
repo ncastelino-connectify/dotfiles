@@ -43,17 +43,19 @@ bindsym $mod+i exec i3lock -i ~/wimage.png -c 000000
 # pcmanfm
 bindsym $mod+p exec pcmanfm
 
+# Find multimedia keysyms: $ xmodmap -pke
+# pulseaudio-ctl: https://github.com/graysky2/pulseaudio-ctl
 # +10 vol
-bindsym $mod+z exec pulseaudio-ctl up 10
-
+bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up 10
 # -10 vol
-bindsym $mod+x exec pulseaudio-ctl down 10
-
+bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 10
 # mute vol
-bindsym $mod+m exec pulseaudio-ctl mute
+bindsym XF86AudioMute exec pulseaudio-ctl mute
+# mute mic
+bindsym $mod+m exec pulseaudio-ctl mute-input
 
 # scrot
-bindsym $mod+y exec scrot ~/images/%Y-%m-%d--%s_$wx$h_scrot.png && notify-send "Screenshot Captured"
+bindsym Sys_Req exec scrot ~/images/%Y-%m-%d--%s_$wx$h_scrot.png && notify-send "Screenshot Captured"
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run  -nb '#000000' -nf '#FFFFFF' -sb '#222222' -sf '#0088ff'
