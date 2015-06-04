@@ -55,7 +55,7 @@ bindsym XF86AudioMute exec pulseaudio-ctl mute
 bindsym $mod+m exec pulseaudio-ctl mute-input
 
 # scrot
-bindsym Sys_Req exec scrot ~/images/%Y-%m-%d--%s_$wx$h_scrot.png && notify-send "Screenshot Captured"
+bindsym Print exec scrot ~/images/%Y-%m-%d--%s_$wx$h_scrot.png && notify-send "Screenshot Captured"
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run  -nb '#000000' -nf '#FFFFFF' -sb '#222222' -sf '#0088ff'
