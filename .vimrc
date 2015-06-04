@@ -9,6 +9,7 @@ set formatoptions=tcroqw
 filetype indent on
 
 set laststatus=2
+let g:airline_theme='murmur'
 
 set tabstop=4
 set shiftwidth=4
@@ -36,7 +37,7 @@ syntax on
 colorscheme wombat256i
 
 " reformat file using perltidy
-noremap <Leader>t :%!perltidy -q<CR> 
+noremap <Leader>t :%!perltidy -q<CR>
 
 set pastetoggle=<F2>
 
@@ -53,21 +54,21 @@ set foldmethod=indent "fold based on indent
 set foldnestmax=10 "deepest fold is 10 levels
 set nofoldenable "dont fold by default
 set foldlevel=3 "this is just what i use
-au BufRead,BufNewFile bash-fc-* set filetype=sh "useful for using vi mode in Bash 
+au BufRead,BufNewFile bash-fc-* set filetype=sh "useful for using vi mode in Bash
 set splitbelow "Ensure that vertical splits add the new window on the bottom
 set splitright "Ensure that horizontal splits add the new frame on the right
-syntax on 
+syntax on
 
 "comment out lines with #
-map <Leader># :s:^:#:<CR>:nohl<CR> 
+map <Leader># :s:^:#:<CR>:nohl<CR>
 "comment out lines with //
 map <Leader>\ :s:^://:<CR>:nohl<CR>
 "remove comments from lines beginning with #
-map <Leader>-# :s:#:^:<CR>:nohl<CR> 
+map <Leader>-# :s:#:^:<CR>:nohl<CR>
 "remove comments from lines beginning with //
-map <Leader>-\ :s://:^:<CR>:nohl<CR> 
+map <Leader>-\ :s://:^:<CR>:nohl<CR>
 "remap Perl array to hash, ignore topic variable $_
-map <Leader>h :s/\$_\@!\(\w\+\),*/\1 => \$\1,\r\t/g<CR> 
+map <Leader>h :s/\$_\@!\(\w\+\),*/\1 => \$\1,\r\t/g<CR>
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-P> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
