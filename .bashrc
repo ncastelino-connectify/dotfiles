@@ -132,6 +132,7 @@ alias upgrade='sudo apt-get upgrade && sudo bash -c "echo 0 > /home/neil/dotfile
 alias vpn='sudo openconnect vpn.drexel.edu'
 alias mocp='mocp -T ~/.moc/themes/dante'
 alias quit='unset HISTFILE && exit'
+alias usbmount='sudo mount -o gid=neil,fmask=113,dmask=002'
 
 wikiCall() {
     # Search wikipedia
