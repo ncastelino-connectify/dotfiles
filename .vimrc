@@ -8,6 +8,8 @@ autocmd Filetype perl setlocal ts=4 sts=4 sw=4
 set formatoptions=tcroqw
 filetype indent on
 
+set laststatus=2
+
 set tabstop=4
 set shiftwidth=4
 set expandtab
