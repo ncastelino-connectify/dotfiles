@@ -23,6 +23,6 @@ elif [ $(echo "$outline" | grep Charging | wc -l) -eq 1 ]; then
 	fi
 	exit 0
 elif [ $(acpi -b | grep -i FULL | wc -l) -eq 1 ]; then 
-	notify-send --urgency=CRITICAL 'BATTERY IS CHARGED; RRAAHHH'
+	#notify-send --urgency=CRITICAL 'BATTERY IS CHARGED; RRAAHHH'
 	exit 0
 fi
