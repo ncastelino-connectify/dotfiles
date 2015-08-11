@@ -141,7 +141,7 @@ wikiCall() {
 }
 
 makepdf() {
-    pdflatex "$1" && evince $(echo "$1" | sed 's/\.tex/\.pdf/')
+    pdflatex "$1" && evince "${1}.pdf"
 }
 
 alias wiki=wikiCall
