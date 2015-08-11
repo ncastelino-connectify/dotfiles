@@ -140,6 +140,10 @@ wikiCall() {
     dig +short txt "$1".wp.dg.cx
 }
 
+makepdf() {
+    pdflatex "$1" && evince $(echo "$1" | sed 's/\.tex/\.pdf/')
+}
+
 alias wiki=wikiCall
 
 export GOPATH=$HOME/go
