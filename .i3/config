@@ -38,7 +38,7 @@ new_window pixel 1
 for_window [class="^.*"] border pixel 1
 
 #i3lock - lock screen
-bindsym $mod+i exec i3lock -i ~/wimage.png -c 000000
+bindsym $mod+i exec i3lock -i ~/wimage.png -c 000000 && xset dpms force suspend
 
 # pcmanfm
 bindsym $mod+p exec pcmanfm
@@ -193,6 +193,6 @@ bar {
 
 exec --no-startup-id feh --bg-scale ~/tree.jpg
 exec --no-startup-id nm-applet || wicd-client -t &
-exec --no-startup-id dropbox start &
+#exec --no-startup-id dropbox start &
 exec --no-startup-id ~/dotfiles/.i3/fix-notify-send-w-dbus
 exec --no-startup-id compton --opacity-rule '65:window_type = "dock" && class_g = "i3bar"' &
