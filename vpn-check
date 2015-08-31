@@ -2,8 +2,11 @@
 
 IFS=$'\n'
 
-if [ $(ip tuntap | wc -l) -lt 1 ]; then
-    for i in $(ps aux | grep [d]eluge); do
-        kill -9 $(echo "$i" | awk '{print $2}')
-    done
-fi
+while [ 1 ]; do
+    if [ $(ip tuntap | wc -l) -lt 1 ]; then
+        for i in $(ps aux | grep [d]eluge); do
+            kill -9 $(echo "$i" | awk '{print $2}')
+        done
+    fi
+    sleep 1
+done
