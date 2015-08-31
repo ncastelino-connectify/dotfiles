@@ -2,6 +2,10 @@
 
 IFS=$'\n'
 
+if [ "x$HOSTNAME" != "xriot" ]; then
+    exit
+fi
+
 while [ 1 ]; do
     if [ $(ip tuntap | wc -l) -lt 1 ]; then
         for i in $(ps aux | grep [d]eluge); do
