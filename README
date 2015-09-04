@@ -7,7 +7,7 @@ User crontab:
 Root crontab:
     0 * * * *      /home/neil/dotfiles/.i3/scripts/status-apt update
     */5 * * * *    /home/neil/dotfiles/.i3/scripts/status-apt noupgrade
-    0 */2 * * *    update-flashplugin-nonfree --install
+    0 * * * *      apt-get clean
 
 Icons used: https://github.com/FortAwesome/Font-Awesome
     cp -i fonts/* /usr/share/fonts/opentype/
@@ -16,12 +16,13 @@ Icons used: https://github.com/FortAwesome/Font-Awesome
 
 Symlinks used:
     [20:26:45 - neil@riot ~]$ l | grep '^l'
-    lrwxrwxrwx  1 neil neil   16 Dec 31 21:03 .bashrc -> dotfiles/.bashrc
-    lrwxrwxrwx  1 neil neil   12 Dec 31 11:50 .i3 -> dotfiles/.i3
-    lrwxrwxrwx  1 neil neil   17 Jan 30 13:35 .inputrc -> dotfiles/.inputrc
+    lrwxrwxrwx  1 neil neil   20 Jul  7 14:08 .abcde.conf -> dotfiles/.abcde.conf
+    lrwxrwxrwx  1 neil neil   16 Dec 31  2014 .bashrc -> dotfiles/.bashrc
+    lrwxrwxrwx  1 neil neil   12 Dec 31  2014 .i3 -> dotfiles/.i3
+    lrwxrwxrwx  1 neil neil   17 Jan 30  2015 .inputrc -> dotfiles/.inputrc
     lrwxrwxrwx  1 neil neil   13 Apr  5 13:54 .moc -> dotfiles/.moc
-    lrwxrwxrwx  1 neil neil   13 Jan 28 12:14 .vim -> dotfiles/.vim
-    lrwxrwxrwx  1 neil neil   15 Jan 16 12:58 .vimrc -> dotfiles/.vimrc
-    lrwxrwxrwx  1 neil neil    7 Jan  1 16:28 Pictures -> images/
-    lrwxrwxrwx  1 neil neil   10 Jan  1 16:27 documents -> Documents/
-    lrwxrwxrwx  1 neil neil   10 Jan  1 16:27 downloads -> Downloads/
+    lrwxrwxrwx  1 neil neil   13 Jan 28  2015 .vim -> dotfiles/.vim
+    lrwxrwxrwx  1 neil neil   15 Jan 16  2015 .vimrc -> dotfiles/.vimrc
+    lrwxrwxrwx  1 neil neil    7 Jan  1  2015 Pictures -> images/
+    lrwxrwxrwx  1 neil neil   10 Jan  1  2015 documents -> Documents/
+    lrwxrwxrwx  1 neil neil   10 Jan  1  2015 downloads -> Downloads/
