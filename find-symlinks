@@ -1,0 +1,33 @@
+#!/bin/bash
+
+IFS=""
+
+if [ "x$1" == "x" ]; then
+    for i in $(ls -hAlv ~ | grep ^l); do
+        echo "$i" | awk -F' ' 'BEGIN{OFS=" -> ";} {print $(NF-2),$NF}'
+    done
+    exit 0
+fi
+
+# Update README with info ^
+if [ "x$1" != "x" ]; then
+    # Count lines until (and including) line with "Symlink"
+        # count=$(sed -n '0,/Symlink/p' README | wc -l)
+    # Count lines after (and including) "Symlink"
+    count=$(sed -n '/Symlink/,$p' README | wc -l)
+
+    # We don't want to count the line including "Symlinks"
+    count=$(echo "$count - 1" | bc)
+
+    # Delete last $count lines
+    head --lines=-$count README > README.temp
+
+    # Print symlinks to README
+    for i in $(ls -hAlv ~ | grep ^l); do
+        printable=$(echo "$i" | \
+            awk -F' ' 'BEGIN{OFS=" -> ";} {print $(NF-2),$NF}')
+        echo -e "$printable" >> README.temp
+    done
+
+    mv README.temp README
+fi
