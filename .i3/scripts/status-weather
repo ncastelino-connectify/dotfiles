@@ -3,7 +3,8 @@
 
 wget --spider ipinfo.io &> /dev/null
 if (( $? != 0 )); then
-	echo "Weather scrape failed"
+	#echo "Weather scrape failed"
+    echo "Wer weiß denn, was die Wetter ist?" > /home/neil/.i3/scripts/weather.out
 else
 	units="metric" # or imperial
 	CF="C" # or Farenheit

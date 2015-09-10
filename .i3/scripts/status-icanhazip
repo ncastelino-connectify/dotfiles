@@ -2,7 +2,7 @@
 
 wget --spider https://icanhazip.com/ &> /dev/null
 if (( $? != 0 )); then
-    echo "IcanHazFailed"
+    echo "Kein Anschluss zum Internet" > /home/neil/.i3/scripts/icanhazip.out
 else
     curl -s -4 https://icanhazip.com/ &> /home/neil/.i3/scripts/icanhazip.out
 fi
