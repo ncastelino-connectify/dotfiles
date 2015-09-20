@@ -135,6 +135,7 @@ alias mocp='mocp -T ~/.moc/themes/dante'
 alias quit='unset HISTFILE && exit'
 alias usbmount='sudo mount -o gid=neil,fmask=113,dmask=002'
 alias kdeluge='kill -9 $(ps aux | grep [d]eluge | awk "{print $2}")'
+alias ntfsfix='sudo ntfsfix'
 
 wikiCall() {
     # Search wikipedia
