@@ -1,5 +1,0 @@
-#!/bin/bash
-conky -c ~/.conky/.conkyrc_proc &
-conky -c ~/.conky/.conkyrc_top &
-conky -c ~/.conky/.conkyrc_network &
-conky -c ~/.conky/.conkyrc_netstat &
