@@ -12,7 +12,7 @@ else
 	lat=$(echo "$ipinfo" | jq .loc | sed 's/"\(.*\),\(.*\)"/\1/')
 	lon=$(echo "$ipinfo" | jq .loc | sed 's/"\(.*\),\(.*\)"/\2/')
 
-	owm=$(curl -s http://api.openweathermap.org/data/2.5/weather\?lat="$lat"\&lon="$lon"\&units="$units")
+	owm=$(curl -s api.openweathermap.org/data/2.5/weather\?lat="$lat"\&lon="$lon"\&units="$units"\&APPID=c296979ff310d5ef8081a6ca2d1bdffc)
 	desc=$(echo "$owm" | jq .weather[0].description | sed 's/"//g')
 	area=$(echo "$owm" | jq .sys.country | sed 's/"//g')
 	temp=$(echo "$owm" | jq .main.temp)
