@@ -197,3 +197,4 @@ exec --no-startup-id nm-applet || wicd-client -t &
 #exec --no-startup-id ~/dotfiles/.i3/fix-notify-send-w-dbus
 exec --no-startup-id ~/dotfiles/vpn-check &
 exec --no-startup-id compton --opacity-rule '65:window_type = "dock" && class_g = "i3bar"' &
+exec --no-startup-id syndaemon -i 1 -K -d
