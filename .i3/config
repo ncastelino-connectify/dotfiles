@@ -47,12 +47,21 @@ bindsym $mod+p exec pcmanfm
 # pulseaudio-ctl: https://github.com/graysky2/pulseaudio-ctl
 # +10 vol
 bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up 10
+bindsym $mod+KP_Add exec pulseaudio-ctl up 10
 # -10 vol
 bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 10
+bindsym $mod+KP_Subtract exec pulseaudio-ctl down 10
 # mute vol
 bindsym XF86AudioMute exec pulseaudio-ctl mute
+bindsym $mod+m exec pulseaudio-ctl mute
 # mute mic
-bindsym $mod+m exec pulseaudio-ctl mute-input
+bindsym $mod+Shift+m exec pulseaudio-ctl mute-input
+
+# backlight
+# -10 brightness
+bindsym $mod+KP_Divide exec xbacklight -dec 10
+# +10 brightness
+bindsym $mod+KP_Multiply exec xbacklight -inc 10
 
 # scrot
 bindsym Print exec scrot ~/images/%Y-%m-%d--%s_$wx$h_scrot.png && notify-send "Screenshot Captured"
