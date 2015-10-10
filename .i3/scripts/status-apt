@@ -1,7 +1,7 @@
 #!/bin/bash
 
 me=$(id -u)
-statFile="/home/neil/dotfiles/.i3/scripts/apt.stat"
+statFile="/dev/shm/apt.stat"
 
 if (( $me != 0 )); then
 	echo "You need to be root in order to to this"

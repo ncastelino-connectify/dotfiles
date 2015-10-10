@@ -4,7 +4,7 @@
 wget --spider ipinfo.io &> /dev/null
 if (( $? != 0 )); then
 	#echo "Weather scrape failed"
-    echo "Wer weiß denn, was die Wetter ist?" > /home/neil/.i3/scripts/weather.out
+    echo "Wer weiß denn, was die Wetter ist?" > /dev/shm/weather.out
 else
 	units="metric" # or imperial
 	CF="C" # or Farenheit
@@ -22,5 +22,5 @@ else
 	temp=$(printf "%0.2f\n" "$temp")
 	temp="$temp°$CF"
 
-	echo "[$area] $desc: $temp" > /home/neil/.i3/scripts/weather.out
+	echo "[$area] $desc: $temp" > /dev/shm/weather.out
 fi
