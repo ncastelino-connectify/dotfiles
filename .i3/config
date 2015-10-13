@@ -27,7 +27,8 @@ floating_modifier $mod
 bindsym $mod+Return exec xfce4-terminal
 
 # start chrome/firefox/whatever browser
-bindsym $mod+g exec firefox
+bindsym $mod+g exec google-chrome
+bindsym $mod+y exec firefox
 
 # kill focused window
 bindsym $mod+Shift+q kill
