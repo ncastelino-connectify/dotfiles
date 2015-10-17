@@ -38,6 +38,7 @@ cpu_avg_samples 2
 TEXT
 # JSON for i3bar
  [
+  { "full_text" : " ${exec ~/dotfiles/.i3/scripts/sp current-conky} ", "color" : "\#ffffff" },
   { "full_text" : "${exec cat /dev/shm/weather.out} ", "color" : "\#ffffff" },
   { "full_text" : " ${exec ~/dotfiles/.i3/scripts/status-sd}" , "color" : "\#ffffff" },
   { "full_text" : " ${if_up tun0}  ${addr tun0}${else}${endif} " , "color" : ${if_up tun0} "\#00ff00"${else}"\#ff0000"${endif} },
