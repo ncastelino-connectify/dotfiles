@@ -27,4 +27,5 @@ else
 	exit 3
 fi
 
+chmod 777 "$statFile"
 exit 0
