@@ -137,6 +137,8 @@ alias usbmount='sudo mount -o gid=neil,fmask=113,dmask=002'
 alias kdeluge='kill -9 $(ps aux | grep [d]eluge | awk "{print $2}")'
 alias ntfsfix='sudo ntfsfix'
 alias uh='unset HISTFILE'
+alias adb='~/android-sdk-linux/platform-tools/adb'
+alias fastboot='sudo /home/neil/android-sdk-linux/platform-tools/fastboot'
 
 wikiCall() {
     # Search wikipedia
