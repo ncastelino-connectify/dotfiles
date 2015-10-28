@@ -38,19 +38,19 @@ cpu_avg_samples 2
 TEXT
 # JSON for i3bar
  [
-  { "full_text" : " ${exec ~/dotfiles/.i3/scripts/sp current-conky} ", "color" : "\#ffffff" },
-  { "full_text" : "${exec cat /dev/shm/weather.out} ", "color" : "\#ffffff" },
-  { "full_text" : " ${exec ~/dotfiles/.i3/scripts/status-sd}" , "color" : "\#ffffff" },
-  { "full_text" : " ${if_up tun0}  ${addr tun0}${else}${endif} " , "color" : ${if_up tun0} "\#00ff00"${else}"\#ff0000"${endif} },
-  { "full_text" : " ${if_up wlan0} ${wireless_link_qual_perc wlan0}%[${wireless_essid wlan0}][ ${totaldown wlan0}  ${totalup wlan0}]${else}${endif} " , "color" : ${if_up wlan0} "\#00ff00"${else}"\#ff0000"${endif} },
-  { "full_text" : " ${if_up eth0} [ ${totaldown eth0}  ${totalup eth0}]${else}${endif} " , "color" : ${if_up eth0} "\#00ff00"${else}"\#ff0000"${endif} },
-  { "full_text" : " ${execi 5 ~/dotfiles/.i3/scripts/status-battery} ", "color" :
+  { "full_text" : "${exec ~/dotfiles/.i3/scripts/sp current-conky}", "color" : "\#ffffff" },
+  { "full_text" : "${exec cat /dev/shm/weather.out}", "color" : "\#ffffff" },
+  { "full_text" : "${exec ~/dotfiles/.i3/scripts/status-sd}" , "color" : "\#ffffff" },
+  { "full_text" : "VPN${if_up tun0}: ${addr tun0}${endif}" , "color" : ${if_up tun0} "\#00ff00"${else}"\#ff0000"${endif} },
+  { "full_text" : "W:${if_up wlan0}${wireless_link_qual_perc wlan0}%[${wireless_essid wlan0}][ ${totaldown wlan0}  ${totalup wlan0}]${else}${endif}" , "color" : ${if_up wlan0} "\#00ff00"${else}"\#ff0000"${endif} },
+  { "full_text" : "E${if_up eth0}: [ ${totaldown eth0}  ${totalup eth0}]${else}${endif}" , "color" : ${if_up eth0} "\#00ff00"${else}"\#ff0000"${endif} },
+  { "full_text" : "${execi 5 ~/dotfiles/.i3/scripts/status-battery}", "color" :
     ${if_match ${exec acpi -b | sed 's/.*,\s\([0-9][0-9]*\)%.*/\1/'}<30}"\#ff0000"${else}"\#ffffff"${endif} },
-  { "full_text" : " ${acpitemp} " , "color" : ${if_match ${acpitemp}<60}"\#ffffff"${else}"\#ff0000"${endif} },
-  { "full_text" : "   ${memperc}% " , "color" : ${if_match ${memperc}<90}"\#ffffff"${else}"\#ff0000"${endif} },
-  { "full_text" : "   ${loadavg 1} ${cpu cpu0}% ", "color" : ${if_match ${loadavg 1}<2}"\#ffffff"${else}"\#ff0000"${endif} },
-  { "full_text" : "   ${execi 5 cat /dev/shm/apt.stat} ", "color" : ${if_match ${exec cat /dev/shm/apt.stat}>0}"\#ffa500"${else}"\#ffffff"${endif}  },
-  { "full_text" : "   ${execi 5 ~/dotfiles/.i3/scripts/status-volume} ", "color" : "\#ffffff"  },
+  { "full_text" : "T:${acpitemp}" , "color" : ${if_match ${acpitemp}<60}"\#ffffff"${else}"\#ff0000"${endif} },
+  { "full_text" : "RAM: ${memperc}%" , "color" : ${if_match ${memperc}<90}"\#ffffff"${else}"\#ff0000"${endif} },
+  { "full_text" : "CPU: ${loadavg 1} ${cpu cpu0}%", "color" : ${if_match ${loadavg 1}<2}"\#ffffff"${else}"\#ff0000"${endif} },
+  { "full_text" : "APT: ${execi 5 cat /dev/shm/apt.stat}", "color" : ${if_match ${exec cat /dev/shm/apt.stat}>0}"\#ffa500"${else}"\#ffffff"${endif}  },
+  { "full_text" : "VOL: ${execi 5 ~/dotfiles/.i3/scripts/status-volume}", "color" : "\#ffffff"  },
   { "full_text" : "[${exec cat /dev/shm/icanhazip.out} ", "color" : "\#00ffff" },
   { "full_text" : " ${exec date +%a} ${exec date +%F} ${exec date +%T}]", "color" : "\#${exec ~/dotfiles/.i3/scripts/status-caps}" }
  ],
