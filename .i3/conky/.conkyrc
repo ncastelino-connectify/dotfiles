@@ -40,7 +40,7 @@ TEXT
  [
   { "full_text" : "${exec ~/dotfiles/.i3/scripts/sp current-conky}", "color" : "\#ffffff" },
   { "full_text" : "${exec cat /dev/shm/weather.out}", "color" : "\#ffffff" },
-  { "full_text" : "${exec ~/dotfiles/.i3/scripts/status-sd}" , "color" : "\#ffffff" },
+  { "full_text" : "${exec ~/dotfiles/.i3/scripts/status-sd}${exec ~/dotfiles/.i3/scripts/status-scratch}" , "color" : "\#ffffff" },
   { "full_text" : "VPN${if_up tun0}: ${addr tun0}${endif}" , "color" : ${if_up tun0} "\#00ff00"${else}"\#ff0000"${endif} },
   { "full_text" : "W:${if_up wlan0}${wireless_link_qual_perc wlan0}%[${wireless_essid wlan0}][ ${totaldown wlan0}  ${totalup wlan0}]${else}${endif}" , "color" : ${if_up wlan0} "\#00ff00"${else}"\#ff0000"${endif} },
   { "full_text" : "E${if_up eth0}: [ ${totaldown eth0}  ${totalup eth0}]${else}${endif}" , "color" : ${if_up eth0} "\#00ff00"${else}"\#ff0000"${endif} },

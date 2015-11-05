@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [ "x$(mount | grep Scratch | wc -l)" == "x1" ]; then
+    echo ", Scratch: $(df -h | grep Scratch | awk '{print $4}')"
+fi
