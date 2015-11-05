@@ -139,6 +139,7 @@ alias ntfsfix='sudo ntfsfix'
 alias uh='unset HISTFILE'
 alias adb='~/android-sdk-linux/platform-tools/adb'
 alias fastboot='sudo /home/neil/android-sdk-linux/platform-tools/fastboot'
+alias webcamtest='qv4l2'
 
 wikiCall() {
     # Search wikipedia
