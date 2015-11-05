@@ -1,4 +1,14 @@
 #!/bin/bash
 
-vol=$(pulseaudio-ctl full-status | awk '{print $1}')
-echo "$vol%"
+blurb=""
+if [ "x$1" == "xvol" ]; then
+    blurb=$(pulseaudio-ctl full-status | awk '{print $1}')
+    echo "$blurb%"
+elif [ "x$1" == "xsound-sink-mute-status" ]; then
+    blurb=$(pulseaudio-ctl full-status | awk '{print $2}')
+    if [ "x$blurb" == "xyes" ]; then
+        echo "ff0000"
+    else
+        echo "00ff00"
+    fi
+fi

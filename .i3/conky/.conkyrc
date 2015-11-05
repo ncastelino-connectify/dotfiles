@@ -50,7 +50,7 @@ TEXT
   { "full_text" : "RAM: ${memperc}%" , "color" : ${if_match ${memperc}<90}"\#ffffff"${else}"\#ff0000"${endif} },
   { "full_text" : "CPU: ${loadavg 1} ${cpu cpu0}%", "color" : ${if_match ${loadavg 1}<2}"\#ffffff"${else}"\#ff0000"${endif} },
   { "full_text" : "APT: ${execi 5 cat /dev/shm/apt.stat}", "color" : ${if_match ${exec cat /dev/shm/apt.stat}>0}"\#ffa500"${else}"\#ffffff"${endif}  },
-  { "full_text" : "VOL: ${execi 5 ~/dotfiles/.i3/scripts/status-volume}", "color" : "\#ffffff"  },
+  { "full_text" : "VOL: ${execi 5 ~/dotfiles/.i3/scripts/status-volume vol}", "color" : "\#${execi 2 ~/dotfiles/.i3/scripts/status-volume sound-sink-mute-status}"  },
   { "full_text" : "[${exec cat /dev/shm/icanhazip.out} ", "color" : "\#00ffff" },
   { "full_text" : " ${exec date +%a} ${exec date +%F} ${exec date +%T}]", "color" : "\#${exec ~/dotfiles/.i3/scripts/status-caps}" }
  ],
