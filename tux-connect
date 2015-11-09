@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ "x$1" == "x" ]; then
+    ssh -X tux
+else
+    ssh -X nac78@tux64-"$1".cs.drexel.edu
+fi
