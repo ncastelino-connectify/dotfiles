@@ -1,0 +1,5 @@
+#!/bin/bash
+
+strength=$(awk 'NR==3 {print $3}' /proc/net/wireless | sed -e 's/\.//')
+percentage=$(echo "$strength"*100/70 | bc)
+echo "$percentage%"
