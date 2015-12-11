@@ -1,34 +1,9 @@
-"call pathogen#helptags()
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd Filetype html setlocal ts=2 sts=2 sw=2
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
-autocmd Filetype perl setlocal ts=4 sts=4 sw=4
-
-set formatoptions=tcroqw
-filetype indent on
+execute pathogen#infect()
+filetype plugin indent on
 
 set laststatus=2
 let g:airline_theme='murmur'
 
-set tabstop=4
-set shiftwidth=4
-set expandtab
-
-set nocompatible
-set nobackup
-set noswapfile
-
-set titlestring=%f
-set title
-set cindent
-set autoindent
-set smartindent
-set wrap
-set linebreak
-
-set wildmode=longest,list,full
-set wildmenu
 
 set colorcolumn=80
 
@@ -36,28 +11,7 @@ set t_Co=256
 syntax on
 colorscheme wombat256i
 
-" reformat file using perltidy
-noremap <Leader>t :%!perltidy -q<CR>
-
-set pastetoggle=<F2>
-
-map <Leader>n :NERDTreeToggle<CR>
-
-map <F5> :set nowrap! <CR>
 map <F6> :set nonumber! <CR>
-
-map <F9> :GitDiff <CR>
-map <F10> :GitCommit <CR>
-
-"folding
-set foldmethod=indent "fold based on indent
-set foldnestmax=10 "deepest fold is 10 levels
-set nofoldenable "dont fold by default
-set foldlevel=3 "this is just what i use
-au BufRead,BufNewFile bash-fc-* set filetype=sh "useful for using vi mode in Bash
-set splitbelow "Ensure that vertical splits add the new window on the bottom
-set splitright "Ensure that horizontal splits add the new frame on the right
-syntax on
 
 "comment out lines with #
 map <Leader># :s:^:#:<CR>:nohl<CR>
