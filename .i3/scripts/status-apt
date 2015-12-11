@@ -1,16 +1,24 @@
 #!/bin/bash
 
-me=$(id -u)
+if [ "x$1" == "x" ]; then
+	echo "Usage: $0 {update|noupgrade|stat}"
+	exit 2
+fi
+
 statFile="/dev/shm/apt.stat"
+
+if [ "x$1" == "xstat" ]; then
+	if [ -e "$statFile" ]; then
+		echo $(cat "$statFile" | awk -F',' '{print $1}')
+	fi
+	exit 0
+fi
+
+me=$(id -u)
 
 if (( $me != 0 )); then
 	echo "You need to be root in order to to this"
 	exit 1
-fi
-
-if [ "x$1" == "x" ]; then
-	echo "Usage: $0 {update|noupgrade}"
-	exit 2
 fi
 
 if [ "x$1" == "xupdate" ]; then
