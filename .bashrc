@@ -129,7 +129,7 @@ alias ref='~/Dictionary/thesaurus'
 alias get='sudo apt-get install'
 alias pick='sudo apt-cache search'
 alias update='sudo apt-get update'
-alias upgrade='sudo apt-get upgrade && sudo bash -c "echo 0 > /dev/shm/apt.stat"'
+alias upgrade='sudo apt-get upgrade && sudo bash -c "echo 0,0 > /dev/shm/apt.stat"'
 alias vpn='sudo openconnect vpn.drexel.edu'
 alias mocp='mocp -T ~/.moc/themes/dante'
 alias quit='unset HISTFILE && exit'
@@ -141,15 +141,11 @@ alias adb='~/android-sdk-linux/platform-tools/adb'
 alias fastboot='sudo /home/neil/android-sdk-linux/platform-tools/fastboot'
 alias webcamtest='qv4l2'
 
-wikiCall() {
-    # Search wikipedia
-    dig +short txt "$1".wp.dg.cx
-}
+#wikiCall() {
+#    # Search wikipedia
+#    dig +short txt "$1".wp.dg.cx
+#}
 
-makepdf() {
-    pdflatex "$1" && evince "${1}.pdf"
-}
-
-alias wiki=wikiCall
+#alias wiki=wikiCall
 
 export GOPATH=$HOME/go
