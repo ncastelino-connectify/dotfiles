@@ -9,7 +9,7 @@ statFile="/dev/shm/apt.stat"
 
 if [ "x$1" == "xstat" ]; then
 	if [ -e "$statFile" ]; then
-		echo $(cat "$statFile" | awk -F',' '{print $1}')
+		echo $(cat "$statFile" | awk -F';' '{print $1}')
 	fi
 	exit 0
 fi
