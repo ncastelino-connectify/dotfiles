@@ -3,16 +3,12 @@ User crontab:
     */10 * * * *    /home/neil/dotfiles/repo-update
     */10 * * * *    /home/neil/dotfiles/.i3/scripts/status-icanhazip
     */5 * * * *     /home/neil/dotfiles/.i3/scripts/status-weather
+    0 8 * * *	    mpc stop && mpc shuffle && mpc play
 
 Root crontab:
     0 * * * *      /home/neil/dotfiles/.i3/scripts/status-apt update
     */5 * * * *    /home/neil/dotfiles/.i3/scripts/status-apt noupgrade
     0 * * * *      apt-get clean
-
-Icons used: https://github.com/FortAwesome/Font-Awesome
-    cp -i fonts/* /usr/share/fonts/opentype/
-              or
-    apt-get install fonts-font-awesome
 
 Symlinks used:
 .abcde.conf -> dotfiles/.abcde.conf
