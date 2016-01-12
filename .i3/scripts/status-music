@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ "$(pidof spotify)" ]; then
+	./sp current-conky
+elif [ "$(pidof mpd)" ]; then
+	mpc | head -n 1
+fi
