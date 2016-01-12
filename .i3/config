@@ -58,11 +58,11 @@ bindsym $mod+m exec pulseaudio-ctl mute
 # mute mic
 bindsym $mod+Shift+m exec pulseaudio-ctl mute-input
 
-# spotify stuff
+# music stuff
 # https://gist.github.com/wandernauta/6800547
-bindsym Shift+Home exec ~/dotfiles/.i3/scripts/sp prev  # Home
-bindsym Shift+End exec ~/dotfiles/.i3/scripts/sp next   # End
-bindsym Shift+Next exec ~/dotfiles/.i3/scripts/sp play  # Pg Down (play/pause)
+bindsym Shift+Home exec ~/dotfiles/.i3/scripts/itch-music prev  # Home
+bindsym Shift+End exec ~/dotfiles/.i3/scripts/itch-music next   # End
+bindsym Shift+Next exec ~/dotfiles/.i3/scripts/itch-music play  # Pg Down (play/pause)
 # Didn't use Shift+Prior
 
 # backlight
