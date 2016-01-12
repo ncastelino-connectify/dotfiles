@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ "$(pidof spotify)" ]; then
+	./sp "$1"
+elif [ "$(pidof mpd)" ]; then
+	if [ "$1" == "play" ]; then
+		mpc toggle
+	else
+		mpc "$1"
+	fi
+fi
