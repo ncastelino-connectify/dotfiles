@@ -3,5 +3,5 @@
 if [ "$(pidof spotify)" ]; then
 	./sp current-conky
 elif [ "$(pidof mpd)" ]; then
-	mpc | head -n 1
+	mpc current
 fi
