@@ -5,7 +5,9 @@ if [ "$(pidof spotify)" ]; then
 elif [ "$(pidof mpd)" ]; then
 	if [ "$1" == "play" ]; then
 		mpc toggle
+		mpc -p 6678 toggle
 	else
 		mpc "$1"
+		mpc -p 6678 "$1"
 	fi
 fi

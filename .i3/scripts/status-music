@@ -1,7 +1,13 @@
 #!/bin/bash
 
 if [ "$(pidof spotify)" ]; then
-	./sp current-conky
+	blurb="$(./sp current-conky)"
+	echo "SPOTIFY: $blurb"
+elif [ "$(pidof mocp)" ] && [ "$(mocp -Q %state)" == "PLAY" ]; then
+	artist="$(mocp -Q %artist)"
+	song="$(mocp -Q %song)"
+	echo "MOCP: $artist $song"
 elif [ "$(pidof mpd)" ]; then
-	mpc current
+	blurb="$(mpc -p 6678 current)"
+	echo "MPD: $blurb"
 fi
