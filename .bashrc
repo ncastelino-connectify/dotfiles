@@ -141,6 +141,8 @@ alias adb='~/android-sdk-linux/platform-tools/adb'
 alias fastboot='sudo /home/neil/android-sdk-linux/platform-tools/fastboot'
 alias webcamtest='qv4l2'
 alias flac-split='~/flac-split/flac-split'
+alias mpc='mpc -p 6678'
+alias ncmpc='ncmpc -p 6678'
 
 #wikiCall() {
 #    # Search wikipedia
