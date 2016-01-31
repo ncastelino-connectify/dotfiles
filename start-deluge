@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ "$(mount | grep Scratch | wc -l)" == "0" ]; then
+	echo 'MOUNT SCRATCH!'
+	exit 5;
+fi
+
 killall deluged
 
 daemon_port=$(sudo ~/dotfiles/assign_pia_port.sh 2> /dev/null)
