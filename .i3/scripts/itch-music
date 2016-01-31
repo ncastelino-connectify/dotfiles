@@ -2,6 +2,14 @@
 
 if [ "$(pidof spotify)" ]; then
 	./sp "$1"
+elif [ "$(pidof mocp)" ]; then
+	if [ "$1" == "play" ] || [ "$1" == "pause" ]; then
+		mocp -G
+	elif [ "$1" == "next" ]; then
+		mocp --next
+	elif [ "$1" == "prev" ]; then
+		mocp --previous
+	fi
 elif [ "$(pidof mpd)" ]; then
 	if [ "$1" == "play" ]; then
 		mpc toggle
