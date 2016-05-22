@@ -1,16 +1,16 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Note: get jq to parse json
 
-wget --spider ipinfo.io &> /dev/null
+wget --spider freegeoip.net &> /dev/null
 if (( $? != 0 )); then
 	#echo "Weather scrape failed"
     echo "Wer weiß denn, was die Wetter ist?" > /dev/shm/weather.out
 else
 	units="metric" # or imperial
 	CF="C" # or Farenheit
-	ipinfo=$(curl -s ipinfo.io)
-	lat=$(echo "$ipinfo" | jq .loc | sed 's/"\(.*\),\(.*\)"/\1/')
-	lon=$(echo "$ipinfo" | jq .loc | sed 's/"\(.*\),\(.*\)"/\2/')
+	ipinfo=$(curl -s http://freegeoip.net/csv/)
+	lat=$(echo "$ipinfo" | awk -F, '{print $(NF-2)}')
+	lon=$(echo "$ipinfo" | awk -F, '{print $(NF-1)}')
 
 	owm=$(curl -s api.openweathermap.org/data/2.5/weather\?lat="$lat"\&lon="$lon"\&units="$units"\&APPID=c296979ff310d5ef8081a6ca2d1bdffc)
 	desc=$(echo "$owm" | jq .weather[0].description | sed 's/"//g')
