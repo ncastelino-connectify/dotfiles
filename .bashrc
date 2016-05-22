@@ -57,8 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\e[0;32m\][\[\e[0;21m\]\t \[\e[0;32m\]- \u@\h \[\e[0;33m\]\w\[\e[0;32m\]]\$\[\e[0m\] '
-    #PS1='\[\e[1;32m\][\t - \u@\h \W]\$\[\e[0m\] ' #'${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='\[\e[0;32m\]\u@\h:\[\e[0;33m\]\w\[\e[0;32m\]>\[\e[0m\] '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -116,7 +115,9 @@ export PERL_MB_OPT="--install_base /home/neil/perl5";
 export PERL_MM_OPT="INSTALL_BASE=/home/neil/perl5";
 export PERL5LIB="/home/neil/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:/home/neil/perl5/lib/perl5";
 export PATH="/home/neil/perl5/bin:$PATH";
+#alias l='ls -algG'
 alias l='ls -hAlv --group-directories-first'
+alias ls='ls -hAv --group-directories-first'
 alias tree='tree --dirsfirst'
 alias urt='cd ~/UrbanTerror42/;./Quake3-UrT.x86_64';
 alias die='sudo shutdown -h'
@@ -143,6 +144,8 @@ alias webcamtest='qv4l2'
 alias flac-split='~/flac-split/flac-split'
 alias mpc='mpc -p 6678'
 alias ncmpc='ncmpc -p 6678'
+alias bdinfo='~/BDInfo/BDInfo/bin/Release/BDInfo.exe'
+alias eac3to='wine ~/Downloads/eac3to/eac3to.exe'
 
 #wikiCall() {
 #    # Search wikipedia
