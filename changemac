@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo ifconfig wlan0 down
+sudo macchanger -A wlan0
+sudo ifconfig wlan0 up
