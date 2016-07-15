@@ -144,6 +144,7 @@ alias webcamtest='qv4l2'
 alias flac-split='~/flac-split/flac-split'
 alias mpc='mpc -p 6678'
 alias ncmpc='ncmpc -p 6678'
+alias ncmpcpp='ncmpcpp -p 6678'
 alias bdinfo='~/BDInfo/BDInfo/bin/Release/BDInfo.exe'
 alias eac3to='wine ~/Downloads/eac3to/eac3to.exe'
 
