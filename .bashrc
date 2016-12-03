@@ -147,6 +147,8 @@ alias ncmpc='ncmpc -p 6678'
 alias ncmpcpp='ncmpcpp -p 6678'
 alias bdinfo='~/BDInfo/BDInfo/bin/Release/BDInfo.exe'
 alias eac3to='wine ~/Downloads/eac3to/eac3to.exe'
+alias mpv='mpv --vo=opengl --hwdec=vaapi' # get vainfo, i965-va-driver, vaapi runtime packages
+					  # more info https://freedesktop.org/wiki/Software/vaapi/
 
 #wikiCall() {
 #    # Search wikipedia
