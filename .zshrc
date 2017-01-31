@@ -55,6 +55,7 @@ ZSH_THEME="jreese"
 plugins=(git)
 plugins=(chucknorris)
 plugins=(web-search)
+plugins=(history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -86,3 +87,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+bindkey -v
+
+bindkey '\e[A' history-beginning-search-backward
+bindkey '\e[B' history-beginning-search-forward
