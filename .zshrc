@@ -87,6 +87,29 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias l='ls -hAlvZ --group-directories-first'
+alias ls='ls -hAv --group-directories-first'
+alias tree='tree --dirsfirst'
+alias die='sudo shutdown -h'
+alias tux='~/dotfiles/tux-connect'
+alias eniac='ssh eniac'
+alias bc='bc -l'
+alias dvpn='sudo openconnect vpn.drexel.edu --authgroup=DrexelVPN'
+alias usbmount='sudo mount -o gid=neil,fmask=113,dmask=002'
+alias kdeluge='kill -9 $(ps aux | grep [d]eluge | awk "{print $2}")'
+alias ntfsfix='sudo ntfsfix'
+alias adb='~/android-sdk-linux/platform-tools/adb'
+alias fastboot='sudo /home/neil/android-sdk-linux/platform-tools/fastboot'
+alias webcamtest='qv4l2'
+alias flac-split='~/flac-split/flac-split'
+alias mpc='mpc -p 6678'
+alias ncmpc='ncmpc -p 6678'
+alias ncmpcpp='ncmpcpp -p 6678'
+alias bdinfo='~/BDInfoCli/BDInfo/bin/Release/BDInfo.exe'
+alias eac3to='wine ~/Downloads/eac3to/eac3to.exe'
+alias mocp='mocp -T ~/.moc/themes/dante'
+alias mpv='mpv --vo=opengl --hwdec=vaapi' # get vainfo, i965-va-driver, vaapi runtime packages
+					  # more info https://freedesktop.org/wiki/Software/vaapi/
 
 bindkey -v
 
