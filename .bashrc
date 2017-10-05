@@ -116,14 +116,13 @@ export PERL_MM_OPT="INSTALL_BASE=/home/neil/perl5";
 export PERL5LIB="/home/neil/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:/home/neil/perl5/lib/perl5";
 export PATH="/home/neil/perl5/bin:$PATH";
 #alias l='ls -algG'
-alias l='ls -hAlv --group-directories-first'
+alias l='ls -hAlvZ --group-directories-first'
 alias ls='ls -hAv --group-directories-first'
 alias tree='tree --dirsfirst'
 alias urt='cd ~/UrbanTerror42/;./Quake3-UrT.x86_64';
 alias die='sudo shutdown -h'
 alias tux='~/dotfiles/tux-connect'
 alias eniac='ssh eniac'
-alias mutt='mutt -F muttrc/.muttrc'
 alias bc='bc -l'
 alias define='~/Dictionary/define'
 alias ref='~/Dictionary/thesaurus'
