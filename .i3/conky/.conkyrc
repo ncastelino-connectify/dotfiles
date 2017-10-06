@@ -42,8 +42,8 @@ TEXT
   { "full_text" : "${exec cat /dev/shm/weather.out}", "color" : "\#ffffff" },
   { "full_text" : "${exec ~/dotfiles/.i3/scripts/status-sd}${exec ~/dotfiles/.i3/scripts/status-scratch}" , "color" : "\#ffffff" },
   { "full_text" : "VPN${if_up tun0}: ${addr tun0}${endif}" , "color" : ${if_up tun0} "\#00ff00"${else}"\#ff0000"${endif} },
-  { "full_text" : "W:${if_up wlan0} ${exec ~/dotfiles/.i3/scripts/status-wifi-strength}[${wireless_essid wlan0}][ ${totaldown wlan0}  ${totalup wlan0}]${else}${endif}" , "color" : ${if_up wlan0} "\#00ff00"${else}"\#ff0000"${endif} },
-  { "full_text" : "E${if_up eth0}: [ ${totaldown eth0}  ${totalup eth0}]${else}${endif}" , "color" : ${if_up eth0} "\#00ff00"${else}"\#ff0000"${endif} },
+  { "full_text" : "W:${if_up wlan0} ${wireless_essid wlan0} ${exec ~/dotfiles/.i3/scripts/status-wifi-strength}|${totaldown wlan0}/${totalup wlan0}${else}${endif}" , "color" : ${if_up wlan0} "\#00ff00"${else}"\#ff0000"${endif} },
+  { "full_text" : "E${if_up eth0}: ${totaldown eth0}/${totalup eth0}]${else}${endif}" , "color" : ${if_up eth0} "\#00ff00"${else}"\#ff0000"${endif} },
   { "full_text" : "${execi 5 ~/dotfiles/.i3/scripts/status-battery}", "color" :
     ${if_match ${exec acpi -b | sed 's/.*,\s\([0-9][0-9]*\)%.*/\1/'}<30}"\#ff0000"${else}"\#ffffff"${endif} },
   { "full_text" : "T:${acpitemp}" , "color" : ${if_match ${acpitemp}<60}"\#ffffff"${else}"\#ff0000"${endif} },
@@ -51,6 +51,6 @@ TEXT
   { "full_text" : "CPU: ${loadavg 1} ${cpu cpu0}%", "color" : ${if_match ${loadavg 1}<2}"\#ffffff"${else}"\#ff0000"${endif} },
   { "full_text" : "APT: ${execi 5 cat /dev/shm/apt.stat}", "color" : ${if_match ${exec ~/dotfiles/.i3/scripts/status-apt stat}>0}"\#ffa500"${else}"\#ffffff"${endif}  },
   { "full_text" : "VOL: ${execi 5 ~/dotfiles/.i3/scripts/status-volume vol}", "color" : "\#${execi 2 ~/dotfiles/.i3/scripts/status-volume sound-sink-mute-status}"  },
-  { "full_text" : "[${exec cat /dev/shm/icanhazip.out} ", "color" : "\#00ffff" },
-  { "full_text" : " ${exec date +%a} ${exec date +%F} ${exec date +%T}]", "color" : "\#${exec ~/dotfiles/.i3/scripts/status-caps}" }
+  { "full_text" : "${exec cat /dev/shm/icanhazip.out} ", "color" : "\#00ffff" },
+  { "full_text" : " ${exec date +%a} ${exec date +%F} ${exec date +%T}", "color" : "\#${exec ~/dotfiles/.i3/scripts/status-caps}" }
  ],
