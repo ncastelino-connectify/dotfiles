@@ -115,3 +115,7 @@ bindkey -v
 
 bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward
+
+# GOPATH
+export GOPATH=$HOME/go
+PATH=$PATH:$GOPATH/bin
