@@ -1,14 +1,5 @@
 #!/bin/bash
 
-if [ -d "$HOME/.dbus/session-bus" ]; then
-	cd "$HOME/.dbus/session-bus"
-	for i in $(ls); do
-		export $(cat "$i" | grep DBUS_SESSION_BUS_ADDRESS=)
-	done
-elif [ -r "$HOME/.dbus/Xdbus" ]; then
-	. "$HOME/.dbus/Xdbus"
-fi
-
 outline=$(acpi -b)
 percen=$(echo "$outline" | sed 's/.*,\s\([0-9]*\)%.*/\1/')
 
