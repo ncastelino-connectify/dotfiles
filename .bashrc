@@ -146,8 +146,9 @@ alias ncmpc='ncmpc -p 6678'
 alias ncmpcpp='ncmpcpp -p 6678'
 alias bdinfo='~/BDInfo/BDInfo/bin/Release/BDInfo.exe'
 alias eac3to='wine ~/Downloads/eac3to/eac3to.exe'
-alias mpv='mpv --vo=opengl --hwdec=vaapi' # get vainfo, i965-va-driver, vaapi runtime packages
+alias mpx='mpv --vo=opengl --hwdec=vaapi' # get vainfo, i965-va-driver, vaapi runtime packages
 					  # more info https://freedesktop.org/wiki/Software/vaapi/
+alias lgrep='l | grep '
 
 #wikiCall() {
 #    # Search wikipedia
@@ -157,3 +158,5 @@ alias mpv='mpv --vo=opengl --hwdec=vaapi' # get vainfo, i965-va-driver, vaapi ru
 #alias wiki=wikiCall
 
 export GOPATH=$HOME/go
+
+export EDITOR=vim
