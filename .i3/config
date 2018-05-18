@@ -34,9 +34,8 @@ bindsym $mod+y exec firefox
 bindsym $mod+Shift+q kill
 
 #(kind of) remove title bar
-#border 1pixel
-#new_window pixel 1
-#for_window [class="^.*"] border pixel 1
+#new_window pixel 100
+for_window [class="^.*"] border pixel 1
 
 #i3lock - lock screen
 bindsym $mod+i exec ~/dotfiles/.i3/scripts/lock-screen now
