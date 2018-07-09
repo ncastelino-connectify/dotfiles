@@ -40,8 +40,8 @@ for_window [class="^.*"] border pixel 1
 #i3lock - lock screen
 bindsym $mod+i exec ~/dotfiles/.i3/scripts/lock-screen now
 
-# pcmanfm
-bindsym $mod+p exec pcmanfm
+# file manager
+bindsym $mod+p exec thunar
 
 # Find multimedia keysyms: $ xmodmap -pke
 # pulseaudio-ctl: https://github.com/graysky2/pulseaudio-ctl
@@ -73,12 +73,8 @@ bindsym $mod+KP_Multiply exec xbacklight -inc 10
 # scrot
 bindsym Print exec scrot ~/images/%Y-%m-%d--%s_$wx$h_scrot.png && notify-send "Screenshot Captured"
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run  -nb '#000000' -nf '#FFFFFF' -sb '#222222' -sf '#0088ff'
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# application launcher
+bindsym $mod+d exec rofi -show run -theme "/home/neil/codetrakcer/rofi-themes/Official Themes/Arc-Dark.rasi"
 
 # change focus
 bindsym $mod+j focus left
@@ -215,3 +211,57 @@ exec --no-startup-id redshift &
 exec --no-startup-id compton --opacity-rule '75:window_type = "dock" && class_g = "i3bar"' &
 exec --no-startup-id syndaemon -i 1 -K -d
 exec xautolock -time 5 -locker '~/dotfiles/.i3/scripts/lock-screen' -corners 0-00 &
+
+### i3-gaps stuff ###
+
+# Necessary for i3-gaps to work properly (pixel can be any value)
+for_window [class="^.*"] border pixel 0
+
+# Smart Gaps
+smart_gaps on
+
+# Smart Borders
+smart_borders on
+
+# Set inner/outer gaps
+gaps inner 7
+gaps outer -2
+
+# Gaps mode
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
