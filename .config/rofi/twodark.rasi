@@ -17,7 +17,7 @@
   blue:       #6eaafb;
   mangenta:   #d886f3;
   cyan:       #6cdcf7;
-  emphasis:   #0a0a0a;
+  emphasis:   #2a2a2a;
   text:       #dfdfdf;
   text-alt:   #b2b2b2;
   fg:         #abb2bf;
@@ -34,7 +34,7 @@
 window {
   transparency: "real";
   fullscreen: true;
-  background-color: #1a1a1add;
+  background-color: #090909dd;
 }
 
 mainbox {
