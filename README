@@ -21,3 +21,4 @@ Symlinks used:
 documents -> Documents/
 downloads -> Downloads/
 images -> Pictures
+.config/compton.conf -> dotfiles/.config/compton.conf
