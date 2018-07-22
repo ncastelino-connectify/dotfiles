@@ -194,7 +194,7 @@ bar {
   separator_symbol " "
 
 	colors {
-		background #1a1a1a
+		background #000000
 # was #232323
 		statusline #dcdcdc
 
