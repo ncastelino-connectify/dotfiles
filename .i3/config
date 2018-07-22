@@ -205,12 +205,11 @@ bar {
 	}
 }
 
-exec --no-startup-id feh --bg-scale ~/tree.jpg
+exec --no-startup-id feh --bg-scale ~/dotfiles/wallpapers/material.32.2.png
 exec --no-startup-id nm-applet || wicd-client -t &
 #exec --no-startup-id ~/dotfiles/vpn-check &
-exec --no-startup-id redshift &
+exec --no-startup-id redshift-gtk &
 exec --no-startup-id compton &
-# --opacity-rule '85:window_type = "dock" && class_g = "i3bar"' &
 exec --no-startup-id syndaemon -i 1 -K -d
 exec --no-startup-id xautolock -time 5 -locker '~/dotfiles/.i3/scripts/lock-screen' -corners 0-00 &
 
