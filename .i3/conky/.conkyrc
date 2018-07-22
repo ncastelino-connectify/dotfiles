@@ -20,7 +20,7 @@ short_units yes
 # How strict should if_up be when testing an interface for being up?
 # The value is one of up, link or address, to check for the interface
 # being solely up, being up and having link or being up, having link
-# and an assigned IP address. 
+# and an assigned IP address.
 if_up_strictness address
 
 # Add spaces to keep things from moving about?  This only affects certain objects.
@@ -38,19 +38,19 @@ cpu_avg_samples 2
 TEXT
 # JSON for i3bar
  [
-  { "full_text" : "${exec ~/dotfiles/.i3/scripts/status-music}", "color" : "\#ffffff" },
-  { "full_text" : "${exec cat /dev/shm/weather.out}", "color" : "\#ffffff" },
+  { "full_text" : "${exec ~/dotfiles/.i3/scripts/status-music}", "color" : "\#0aef9b" },
+  { "full_text" : "${exec cat /dev/shm/weather.out}", "color" : "\#1198db" },
   { "full_text" : "${exec ~/dotfiles/.i3/scripts/status-sd}${exec ~/dotfiles/.i3/scripts/status-scratch}" , "color" : "\#ffffff" },
-  { "full_text" : "VPN${if_up tun0}: ${addr tun0}${endif}" , "color" : ${if_up tun0} "\#00ff00"${else}"\#ff0000"${endif} },
-  { "full_text" : "W:${if_up wlan0} ${wireless_essid wlan0} ${exec ~/dotfiles/.i3/scripts/status-wifi-strength}|${totaldown wlan0}/${totalup wlan0}${else}${endif}" , "color" : ${if_up wlan0} "\#00ff00"${else}"\#ff0000"${endif} },
-  { "full_text" : "E${if_up eth0}: ${totaldown eth0}/${totalup eth0}]${else}${endif}" , "color" : ${if_up eth0} "\#00ff00"${else}"\#ff0000"${endif} },
+  ${if_up tun0} { "full_text" : "vpn: ${addr tun0}" , "color" : "\#00ff00" }, ${endif}
+  ${if_up wlan0}{ "full_text" : "w: ${wireless_essid wlan0}${wireless_link_qual_perc wlan0} ${totaldown wlan0}/${totalup wlan0}" , "color" : "\#0b8405"},${endif}
+  ${if_up eth0} { "full_text" : "e: ${totaldown eth0}/${totalup eth0}" , "color" : "\#0b8405"},${endif}
   { "full_text" : "${execi 5 ~/dotfiles/.i3/scripts/status-battery}", "color" :
     ${if_match ${exec acpi -b | sed 's/.*,\s\([0-9][0-9]*\)%.*/\1/'}<30}"\#ff0000"${else}"\#ffffff"${endif} },
-  { "full_text" : "T:${acpitemp}" , "color" : ${if_match ${acpitemp}<60}"\#ffffff"${else}"\#ff0000"${endif} },
-  { "full_text" : "RAM: ${memperc}%" , "color" : ${if_match ${memperc}<90}"\#ffffff"${else}"\#ff0000"${endif} },
-  { "full_text" : "CPU: ${loadavg 1} ${cpu cpu0}%", "color" : ${if_match ${loadavg 1}<2}"\#ffffff"${else}"\#ff0000"${endif} },
-  { "full_text" : "APT: ${execi 5 cat /dev/shm/apt.stat}", "color" : ${if_match ${exec ~/dotfiles/.i3/scripts/status-apt stat}>0}"\#ffa500"${else}"\#ffffff"${endif}  },
-  { "full_text" : "VOL: ${execi 5 ~/dotfiles/.i3/scripts/status-volume vol}", "color" : "\#${execi 2 ~/dotfiles/.i3/scripts/status-volume sound-sink-mute-status}"  },
-  { "full_text" : "${exec cat /dev/shm/icanhazip.out} ", "color" : "\#00ffff" },
-  { "full_text" : " ${exec date +%a} ${exec date +%F} ${exec date +%T}", "color" : "\#${exec ~/dotfiles/.i3/scripts/status-caps}" }
+  { "full_text" : "temp:${acpitemp}" , "color" : ${if_match ${acpitemp}<60}"\#ffffff"${else}"\#ff0000"${endif} },
+  { "full_text" : "ram: ${memperc}%" , "color" : ${if_match ${memperc}<90}"\#ffffff"${else}"\#ff0000"${endif} },
+  { "full_text" : "cpu: ${loadavg 1} ${cpu cpu0}%", "color" : ${if_match ${loadavg 1}<2}"\#ffffff"${else}"\#ff0000"${endif} },
+  { "full_text" : "apt: ${execi 5 cat /dev/shm/apt.stat}", "color" : ${if_match ${exec ~/dotfiles/.i3/scripts/status-apt stat}>0}"\#ffa500"${else}"\#ffffff"${endif}  },
+  { "full_text" : "vol: ${execi 5 ~/dotfiles/.i3/scripts/status-volume vol}", "color" : "\#${execi 2 ~/dotfiles/.i3/scripts/status-volume sound-sink-mute-status}"  },
+  { "full_text" : "${exec cat /dev/shm/icanhazip.out}", "color" : "\#bb09c1" },
+  { "full_text" : "${exec date +%a} ${exec date +%F} ${exec date +%T}", "color" : "\#${exec ~/dotfiles/.i3/scripts/status-caps}" }
  ],
