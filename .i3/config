@@ -74,7 +74,7 @@ bindsym $mod+KP_Multiply exec xbacklight -inc 10
 bindsym Print exec scrot ~/images/%Y-%m-%d--%s_$wx$h_scrot.png && notify-send "Screenshot Captured"
 
 # application launcher
-bindsym $mod+d exec rofi -show run -theme "/home/neil/codetrakcer/rofi-themes/User Themes/onedark.rasi"
+bindsym $mod+d exec rofi -show run
 
 # change focus
 bindsym $mod+j focus left
