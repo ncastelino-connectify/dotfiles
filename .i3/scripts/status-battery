@@ -4,14 +4,14 @@ blurb=$(acpi -b)
 status=$(echo "$blurb" | awk '{print $3}' | sed -e 's/.$//')
 percen=$(echo "$blurb" | awk '{print $4}' | sed -e 's/,//')
 
-if [ "x$status" == "xFull" ]; then
-	echo "FULL"
-elif [ "x$status" == "xCharging" ]; then
-	echo "CHR $percen"
-elif [ "x$status" == "xDischarging" ]; then
-	echo "BAT $percen"
-elif [ "x$status" == "xUnknown" ]; then
-	echo "UNK $percen"
+if [[ "${status}" = "Full" ]]; then
+	echo "bat: $percen"
+elif [[ "${status}" = "Charging" ]]; then
+	echo "chr: $percen"
+elif [[ "${status}" = "Discharging" ]]; then
+	echo "bat: $percen"
+elif [[ "${status}" = "Unknown" ]]; then
+	echo "unk: $percen"
 else
 	echo "$status $percen"
 fi
