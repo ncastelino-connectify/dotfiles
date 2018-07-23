@@ -11,7 +11,6 @@ Root crontab:
     0 * * * *      apt-get clean
 
 Symlinks used:
-.abcde.conf -> dotfiles/.abcde.conf
 .bashrc -> dotfiles/.bashrc
 .i3 -> dotfiles/.i3
 .inputrc -> dotfiles/.inputrc
@@ -22,3 +21,4 @@ documents -> Documents/
 downloads -> Downloads/
 images -> Pictures
 .config/compton.conf -> dotfiles/.config/compton.conf
+.config/xfce4/terminal -> dotfiles/.config/xfce4/terminal
