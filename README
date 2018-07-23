@@ -22,3 +22,9 @@ downloads -> Downloads/
 images -> Pictures
 .config/compton.conf -> dotfiles/.config/compton.conf
 .config/xfce4/terminal -> dotfiles/.config/xfce4/terminal
+.mpd -> dotfiles/.mpd
+.mpdconf -> .mpd/mpd.conf
+.oh-my-zsh -> dotfiles/.oh-my-zsh
+.rtorrent.rc -> dotfiles/.rtorrent.rc
+.thunderbird -> /home/neil/.icedove
+.zshrc -> dotfiles/.zshrc
