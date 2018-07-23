@@ -219,7 +219,7 @@ exec --no-startup-id xautolock -time 5 -locker '~/dotfiles/.i3/scripts/lock-scre
 for_window [class="^.*"] border pixel 0
 
 # Smart Gaps
-smart_gaps on
+#smart_gaps on
 
 # Smart Borders
 smart_borders on
