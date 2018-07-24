@@ -24,9 +24,11 @@ urxvt.scrollBar: None
 urxvt.termName: rxvt-256color
 urxvt.internalBorder: 4
 urxvt.scrollTtyKeypress: true
-urxvt.scrollTtyOutput: false
+urxvt.scrollTtyOutput: true
+urxvt.skipScroll:  false
 urxvt.cursorBlink: true
 urxvt.cursorColor: #1a1a1a
+urxvt.buffered: false
 
 urxvt.depth: 32
 urxvt.background: rgba:0000/0000/0200/c800
