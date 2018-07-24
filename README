@@ -28,3 +28,4 @@ images -> Pictures
 .rtorrent.rc -> dotfiles/.rtorrent.rc
 .thunderbird -> /home/neil/.icedove
 .zshrc -> dotfiles/.zshrc
+.Xdefaults -> dotfiles/.Xdefaults
