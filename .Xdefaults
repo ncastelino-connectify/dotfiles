@@ -27,7 +27,7 @@ urxvt.scrollTtyKeypress: true
 urxvt.scrollTtyOutput: true
 urxvt.skipScroll:  false
 urxvt.cursorBlink: true
-urxvt.cursorColor: #1a1a1a
+urxvt.cursorColor: #4b5648
 urxvt.buffered: false
 
 urxvt.depth: 32
