@@ -100,6 +100,17 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+
+mode "moveit" {
+    bindsym Up move up 20px
+    bindsym Left move left 20px
+    bindsym Down move down 20px
+    bindsym Right move right 20px
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+bindsym $mod+n focus floating; mode "moveit"
+
 # split in horizontal orientation
 bindsym $mod+h split h
 
