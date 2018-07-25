@@ -34,3 +34,28 @@ define bdmost(n,p,q,x) {
     }
     return value;
 }
+
+# blasted economics
+define fp(p, i, n) {
+  return p*((1+i)^n);
+}
+
+define pf(f, i, n) {
+  return f*(1/((1+i)^n));
+}
+
+define fa(a, i, n) {
+  return a*((((1+i)^n) -1)/i);
+}
+
+define af(f, i, n) {
+  return f*(i/(((1+i)^n) -1));
+}
+
+define ap(p, i, n) {
+  return p*((i*((1+i)^n))/(((1+i)^n)-1));
+}
+
+define pa(a, i, n) {
+  return a*((((1+i)^n) - 1)/(i*((1+i)^n)));
+}
