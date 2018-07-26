@@ -87,7 +87,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias l='ls -hAlvZ --group-directories-first'
+alias l='ls -hAlvZ --group-directories-first --color=auto'
 alias ls='ls -hAv --group-directories-first'
 alias tree='tree --dirsfirst'
 alias die='sudo shutdown -h'
