@@ -1,7 +1,8 @@
-urxvt.font: xft:Monospace:pixelsize=11
-urxvt.boldFont: xft:Tewi:pixelsize=11
-urxvt.background:       #101010
-urxvt.foreground:       #D2C5BC
+urxvt.font: xft:Monospace:pixelsize=11:antialias=true
+urxvt.boldFont: xft:Monospace:pixelsize=11
+URxvt*background:         #2e3440
+URxvt*foreground:         #eeeeec
+URxvt*selectToClipboard:  true
 urxvt.cursorColor:  #202020
 urxvt.color0:       #202020
 urxvt.color8:       #606060
@@ -22,7 +23,7 @@ urxvt.color15:      #FFF0F0
 urxvt.fading: 0
 urxvt.scrollBar: None
 urxvt.termName: rxvt-256color
-urxvt.internalBorder: 4
+urxvt.internalBorder: 15
 urxvt.scrollTtyKeypress: true
 urxvt.scrollTtyOutput: true
 urxvt.skipScroll:  false
@@ -31,4 +32,8 @@ urxvt.cursorColor: #4b5648
 urxvt.buffered: false
 
 urxvt.depth: 32
-urxvt.background: rgba:0000/0000/0000/dddd
+# rbga
+# Simply just take regular RBG format (#123456) and split it up while padding
+# with 0s and add transparency to alpha channel like so -> 1200/3400/5600/0000
+#urxvt.background: rgba:2e00/3400/4000/c800
+urxvt.background: rgba:0000/0000/0000/eeee
