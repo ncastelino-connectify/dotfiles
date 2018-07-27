@@ -1,5 +1,5 @@
-urxvt.font: xft:Monospace:size=6:antialias=true
-urxvt.boldFont: xft:Monospace:bold:size=6:antialias=true
+urxvt.font: xft:Monospace:size=8:antialias=true
+urxvt.boldFont: xft:Monospace:bold:size=8:antialias=true
 URxvt.letterSpace: -1
 URxvt*background:         #000000
 URxvt*foreground:         #eeeeec
