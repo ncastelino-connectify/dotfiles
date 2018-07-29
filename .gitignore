@@ -6,3 +6,4 @@
 .mpd/mpd.pid
 .mpd/mpd.state
 .mpd/playlists/
+*.scm
