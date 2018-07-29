@@ -216,7 +216,7 @@ bar {
 	}
 }
 
-exec --no-startup-id feh --bg-scale ~/dotfiles/wallpapers/material.32.2.png &
+exec --no-startup-id feh --bg-scale ~/dotfiles/adapta-backgrounds/backgrounds/tealized.jpg &
 exec --no-startup-id nm-applet || wicd-client -t &
 exec --no-startup-id redshift-gtk &
 exec --no-startup-id compton &
