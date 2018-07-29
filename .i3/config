@@ -203,27 +203,25 @@ bar {
   status_command $HOME/dotfiles/.i3/conky/conky-i3bar
 	position top
   separator_symbol " "
+  strip_workspace_numbers yes
 
 	colors {
-		background #000000
-# was #232323
+		background #13141b
 		statusline #dcdcdc
 
-		focused_workspace  #ffffff #285577
-		active_workspace   #ffffff #333333
-		inactive_workspace #888888 #222222
-		urgent_workspace   #ffffff #900000
+    focused_workspace  #F9FAF9 #16a085
+    active_workspace   #595B5B #353836
+    inactive_workspace #595B5B #202A2E #EEE8D5
+    urgent_workspace   #16a085 #FDF6E3 #E5201D
 	}
 }
 
-exec --no-startup-id feh --bg-scale ~/dotfiles/wallpapers/material.32.2.png
+exec --no-startup-id feh --bg-scale ~/dotfiles/wallpapers/material.32.2.png &
 exec --no-startup-id nm-applet || wicd-client -t &
-#exec --no-startup-id ~/dotfiles/vpn-check &
 exec --no-startup-id redshift-gtk &
 exec --no-startup-id compton &
-exec --no-startup-id syndaemon -i 1 -K -d
+exec --no-startup-id syndaemon -i 1 -K -d &
 exec --no-startup-id xautolock -time 5 -locker '~/dotfiles/.i3/scripts/lock-screen' -corners 0-00 &
-exec --no-startup-id xset +fp /home/neil/.fonts && xset fp rehash
 
 ### i3-gaps stuff ###
 
