@@ -209,10 +209,10 @@ bar {
 		background #13141b
 		statusline #dcdcdc
 
-    focused_workspace  #F9FAF9 #16a085
+    focused_workspace  #F9FAF9 #045600
     active_workspace   #595B5B #353836
-    inactive_workspace #595B5B #202A2E #EEE8D5
-    urgent_workspace   #16a085 #FDF6E3 #E5201D
+    inactive_workspace #595B5B #202A2E
+    urgent_workspace   #16a085 #FDF6E3
 	}
 }
 
