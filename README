@@ -29,3 +29,4 @@ images -> Pictures
 .thunderbird -> /home/neil/.icedove
 .zshrc -> dotfiles/.zshrc
 .Xdefaults -> dotfiles/.Xdefaults
+.profile -> dotfiles/.profile
