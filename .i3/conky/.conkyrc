@@ -42,7 +42,7 @@ TEXT
   { "full_text" : "${exec cat /dev/shm/weather.out}", "color" : "\#1198db" },
   { "full_text" : "${exec ~/dotfiles/.i3/scripts/status-sd}${exec ~/dotfiles/.i3/scripts/status-scratch}" , "color" : "\#ffffff" },
   ${if_up tun0} { "full_text" : "vpn: ${addr tun0}" , "color" : "\#00ff00" }, ${endif}
-  ${if_up wlan0}{ "full_text" : "w: ${wireless_essid wlan0}${wireless_link_qual_perc wlan0} ${totaldown wlan0}/${totalup wlan0}" , "color" : "\#0b8405"},${endif}
+  ${if_up wlan0}{ "full_text" : "w: ${wireless_essid wlan0}${wireless_link_qual_perc wlan0}% ${totaldown wlan0}/${totalup wlan0}" , "color" : "\#0b8405"},${endif}
   ${if_up eth0} { "full_text" : "e: ${totaldown eth0}/${totalup eth0}" , "color" : "\#0b8405"},${endif}
   { "full_text" : "${execi 5 ~/dotfiles/.i3/scripts/status-battery}", "color" :
     ${if_match ${exec acpi -b | sed 's/.*,\s\([0-9][0-9]*\)%.*/\1/'}<30}"\#ff0000"${else}"\#ffffff"${endif} },
