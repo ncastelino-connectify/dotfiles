@@ -222,6 +222,8 @@ exec --no-startup-id redshift-gtk &
 exec --no-startup-id compton &
 exec --no-startup-id syndaemon -i 1 -K -d &
 exec --no-startup-id xautolock -time 5 -locker '~/dotfiles/.i3/scripts/lock-screen' -corners 0-00 &
+# React to suspend/hibernate/etc by invoking i3lock
+exec --no-startup-id xss-lock -- /home/neil/.i3/scripts/lock-screen &
 
 ### i3-gaps stuff ###
 
