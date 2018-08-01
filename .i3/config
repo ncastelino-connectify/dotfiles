@@ -46,24 +46,18 @@ bindsym $mod+p exec thunar
 
 # Find multimedia keysyms: $ xmodmap -pke
 # pulseaudio-ctl: https://github.com/graysky2/pulseaudio-ctl
-# +10 vol
 bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up 10
-bindsym $mod+KP_Add exec pulseaudio-ctl up 10
-# -10 vol
 bindsym XF86AudioLowerVolume exec pulseaudio-ctl down 10
-bindsym $mod+KP_Subtract exec pulseaudio-ctl down 10
-# mute vol
 bindsym XF86AudioMute exec pulseaudio-ctl mute
-bindsym $mod+m exec pulseaudio-ctl mute
-# mute mic
 bindsym $mod+Shift+m exec pulseaudio-ctl mute-input
 
 # music stuff
-# https://gist.github.com/wandernauta/6800547
+bindsym XF86AudioPrev exec ~/dotfiles/.i3/scripts/itch-music prev
 bindsym Shift+Home exec ~/dotfiles/.i3/scripts/itch-music prev  # Home
+bindsym XF86AudioNext exec exec ~/dotfiles/.i3/scripts/itch-music next
 bindsym Shift+End exec ~/dotfiles/.i3/scripts/itch-music next   # End
+bindsym XF86AudioPlay exec ~/dotfiles/.i3/scripts/itch-music play
 bindsym Shift+Next exec ~/dotfiles/.i3/scripts/itch-music play  # Pg Down (play/pause)
-# Didn't use Shift+Prior
 
 # screen backlight
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
@@ -113,7 +107,7 @@ mode "moveit" {
     bindsym Escape mode "default"
     bindsym Return mode "default"
 }
-bindsym $mod+n focus floating; mode "moveit"
+bindsym $mod+m focus floating; mode "moveit"
 
 # split in horizontal orientation
 bindsym $mod+h split h
