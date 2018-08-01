@@ -1,26 +1,35 @@
 #!/usr/bin/env bash
 # Note: get jq to parse json
 
-wget --spider freegeoip.net &> /dev/null
-if (( $? != 0 )); then
-	#echo "Weather scrape failed"
-    echo "Wer weiß denn, was die Wetter ist?" > /dev/shm/weather.out
-else
-	units="metric" # or imperial
-	CF="C" # or Farenheit
-	ipinfo=$(curl -s http://freegeoip.net/csv/)
-	lat=$(echo "$ipinfo" | awk -F, '{print $(NF-2)}')
-	lon=$(echo "$ipinfo" | awk -F, '{print $(NF-1)}')
+ipaddr="$(cat /dev/shm/icanhazip.out)"
+key="2d0b53dd3d3d642f6a2eb978766a7510"
+api_base="http://api.ipstack.com/"
+endpoint="${api_base}${ipaddr}?access_key=${key}"
 
-	owm=$(curl -s api.openweathermap.org/data/2.5/weather\?lat="$lat"\&lon="$lon"\&units="$units"\&APPID=c296979ff310d5ef8081a6ca2d1bdffc)
-	desc=$(echo "$owm" | jq .weather[0].description | sed 's/"//g')
-	area=$(echo "$owm" | jq .sys.country | sed 's/"//g')
-	temp=$(echo "$owm" | jq .main.temp)
-	if [ "x$(echo $LC_NUMERIC)" == "xde_DE.UTF-8" ]; then
-		temp=$(echo "$temp" | sed 's/\./,/')
-	fi
-	temp=$(printf "%0.2f\n" "$temp")
-	temp="$temp°$CF"
+[ -z "$ipaddr" ] && {
+  echo "no internet?"
+  exit 1
+}
 
-	echo "[$area] $desc: $temp" > /dev/shm/weather.out
+if ping -q -c 1 -W 1 "${endpoint}" &> /dev/null; then
+	echo "API endpoint not available"
+  exit 1
 fi
+
+units="metric" # or imperial
+CF="C" # or Farenheit
+ipinfo=$(curl -s "${endpoint}")
+lat=$(echo "$ipinfo" | jq .latitude)
+lon=$(echo "$ipinfo" | jq .longitude)
+
+owm=$(curl -s api.openweathermap.org/data/2.5/weather\?lat="$lat"\&lon="$lon"\&units="$units"\&APPID=c296979ff310d5ef8081a6ca2d1bdffc)
+desc=$(echo "$owm" | jq .weather[0].description | sed 's/"//g')
+area=$(echo "$owm" | jq .sys.country | sed 's/"//g')
+temp=$(echo "$owm" | jq .main.temp)
+if [ "$LC_NUMERIC" == "de_DE.UTF-8" ]; then
+	temp=$(echo "$temp" | sed 's/\./,/')
+fi
+temp=$(printf "%0.2f\n" "$temp")
+temp="$temp°$CF"
+
+echo "[$area] $desc: $temp" > /dev/shm/weather.out
