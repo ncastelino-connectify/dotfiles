@@ -1,19 +1,10 @@
 #!/bin/sh
 
 file="/dev/shm/asdf.png"
-param="${1:-timed}"
 
-[ "${param}" != "now" ] && {
-  scrot "${file}"
-  mogrify -scale 10% -scale 1000% "${file}"
-}
-
-i3lock -i "${file}" -c 000000 
-
-[ "${param}" != "now" ] && {
-  sleep 10
-}
-
-pgrep i3lock && xset dpms force off
+scrot "${file}" && \
+convert "${file}" -scale 5% -scale 2000% "${file}" && \
+i3lock -fe -i "${file}" -c 000000 && \
+xset dpms force off
 
 rm -f "${file}"
