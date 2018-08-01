@@ -1,9 +1,11 @@
 #!/bin/sh
 
 file="/dev/shm/asdf.png"
+lockicon="/home/neil/dotfiles/random-images/material-icon.png"
 
 scrot "${file}" && \
 convert "${file}" -scale 5% -scale 2000% "${file}" && \
+convert -gravity center "${file}" "${lockicon}" -composite "${file}" && \
 i3lock -fe -i "${file}" -c 000000 && \
 xset dpms force off
 
