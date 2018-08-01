@@ -65,11 +65,14 @@ bindsym Shift+End exec ~/dotfiles/.i3/scripts/itch-music next   # End
 bindsym Shift+Next exec ~/dotfiles/.i3/scripts/itch-music play  # Pg Down (play/pause)
 # Didn't use Shift+Prior
 
-# backlight
-# -10 brightness
-bindsym $mod+KP_Divide exec xbacklight -dec 10
-# +10 brightness
-bindsym $mod+KP_Multiply exec xbacklight -inc 10
+# screen backlight
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+
+# Keyboard backlight brightness
+# TODO figure this out
+#bindsym XF86KbdBrightnessDown exec
+#bindsym XF86KbdBrightnessUp exec
 
 # scrot
 bindsym Print exec scrot ~/images/%Y-%m-%d--%s_$wx$h_scrot.png && notify-send "Screenshot Captured"
@@ -211,10 +214,11 @@ bar {
 		background $transparent
 		statusline #dcdcdc
 
-    focused_workspace  #F9FAF9 #045600
-    active_workspace   #595B5B #353836
-    inactive_workspace #595B5B $transparent
-    urgent_workspace   #16a085 #FDF6E3
+#   class              border       background text
+    focused_workspace  #045600      #045600    #F9FAF9
+    active_workspace   $transparent #353836    #595B5B
+    inactive_workspace $transparent $transparent #595B5B
+    urgent_workspace   $transparent #FDF6E3    #16a085
 	}
 }
 
