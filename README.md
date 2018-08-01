@@ -41,6 +41,7 @@ images -> Pictures
 
 ### Other interesting stuff
 * Icons: [papirus-icon-theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/)
+* Mouse Cursor: [Breeze](https://www.gnome-look.org/p/999927/)
 * Wallpaper: [adapta-backgrounds](https://github.com/adapta-project/adapta-backgrounds)
 * GTK theme: [adapta-gtk-theme](https://github.com/adapta-project/adapta-gtk-theme)
 * Application launcher: [rofi](https://github.com/DaveDavenport/rofi)
