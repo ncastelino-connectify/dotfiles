@@ -1,33 +1,33 @@
 #!/bin/bash
 
-if [ "x$1" == "x" ]; then
+if [ -z "$1" ]; then
 	echo "Usage: $0 {update|noupgrade|stat}"
 	exit 2
 fi
 
 statFile="/dev/shm/apt.stat"
 
-if [ "x$1" == "xstat" ]; then
+if [ "$1" == "stat" ]; then
 	if [ -e "$statFile" ]; then
-		echo $(cat "$statFile" | awk -F';' '{print $1}')
+		awk -F';' '{print $1}' "$statFile"
 	fi
 	exit 0
 fi
 
 me=$(id -u)
 
-if (( $me != 0 )); then
+if (( me != 0 )); then
 	echo "You need to be root in order to to this"
 	exit 1
 fi
 
-if [ "x$1" == "xupdate" ]; then
+if [ "$1" == "update" ]; then
 	apt-get update &> /dev/null
-elif [ "x$1" == "xnoupgrade" ]; then
+elif [ "$1" == "noupgrade" ]; then
 	out=$(apt-get upgrade --assume-no 2> /dev/null)
-	echo "$out" | grep 'upgraded,' | sed 's/^\([0-9][0-9]*\)\supgraded.*\s\([0-9][0-9]*\)\s.*/\1;\2/' > "$statFile"
+	echo "$out" | grep 'upgraded,' | sed 's/^\([0-9][0-9]*\)\supgraded.*/\1/' > "$statFile"
 	check=$(cat "$statFile")
-	if [ "x$check" == "x" ]; then
+	if [ -z "$check" ]; then
 		echo "-1" > "$statFile"
 	fi
 else
