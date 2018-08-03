@@ -12,6 +12,7 @@
 * {
   black:      #000000;
   red:        #eb6e67;
+  redd:       #600126;
   green:      #95ee8f;
   yellow:     #f8c456;
   blue:       #6eaafb;
@@ -74,7 +75,7 @@ element {
 }
 
 element selected {
-  background-color: @emphasis;
+  background-color: @redd;
   text-color: @text;
 }
 
