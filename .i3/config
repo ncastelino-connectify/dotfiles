@@ -234,7 +234,7 @@ exec --no-startup-id nm-applet &
 exec --no-startup-id redshift-gtk &
 exec --no-startup-id compton &
 exec --no-startup-id syndaemon -i 1 -K -d &
-exec --no-startup-id xautolock -time 5 -locker '~/dotfiles/.i3/scripts/lock-screen' -corners 0-00 &
+#exec --no-startup-id xautolock -time 5 -locker '~/dotfiles/.i3/scripts/lock-screen' -corners 0-00 &
 # React to suspend/hibernate/etc by invoking i3lock
 exec --no-startup-id xss-lock -- /home/neil/.i3/scripts/lock-screen &
 
@@ -291,3 +291,17 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+for_window [class="(?i)VirtualBox" title="(?i)Manager"] floating enable
+for_window [class="(?i)VirtualBox"] floating enable
+# if it seems nice to move the floating window to the cursor, then use
+# "move position mouse" property
+for_window [class="(?i)pavucontrol"] floating enable,  resize set 640 480
+for_window [class="(?i)pavucontrol" instance="pavucontrol-bar"] move down 340 px
+
