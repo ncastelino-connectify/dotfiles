@@ -1,9 +1,0 @@
-.vim/
-.moc/
-*.out
-.mpd/mpd.db
-.mpd/mpd.log
-.mpd/mpd.pid
-.mpd/mpd.state
-.mpd/playlists/
-*.scm
