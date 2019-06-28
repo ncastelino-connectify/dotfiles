@@ -291,7 +291,7 @@ exec_always --no-startup-id fix_xcursor
 # geoclue needed for redshift
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent &
 exec --no-startup-id redshift-gtk &
-exec --no-startup-id xss-lock -- blurlock &
+exec --no-startup-id xss-lock -l -- /home/neil/.i3/scripts/blurlock &
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
