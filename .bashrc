@@ -95,7 +95,7 @@ alias cp="cp -i"                          # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
-alias mpv='mpv --hwdec=vaapi --vo=vaapi'
+alias mpv='mpv --hwdec=vaapi --vo=gpu'
 alias vi='vim'
 alias more=less
 
