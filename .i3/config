@@ -28,6 +28,7 @@ font xft:URWGothic-Book 11
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
+# terminal == urxvt
 # start a terminal
 bindsym $mod+Return exec terminal
 
@@ -327,7 +328,7 @@ set_from_resource $term_color15    color15
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
 	#font xft:Droid Sans Mono, FontAwesome5Brands, FontAwesome5Free 10
-	font pango:DejaVu Sans Mono, FontAwesome5Brands, FontAwesome5Free 10
+	font pango:DejaVu Sans Mono 9, FontAwesome5Brands 9, FontAwesome5Free 9
 	i3bar_command i3bar
 	status_command i3status
 	position bottom
