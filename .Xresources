@@ -182,7 +182,7 @@ URxvt.keysym.Shift-Control-Down:  \033[1;6B
 URxvt*internalBorder:               10
 ! URxvt*borderLess:                 true
 ! URxvt*lineSpace:                  number
-! URxvt*letterSpace:                number
+URxvt*letterSpace:                  -1
 ! URxvt*skipBuiltinGlyphs:          boolean
 ! URxvt*pointerBlankDelay:          number
 ! URxvt*backspacekey:               string
