@@ -67,7 +67,7 @@ bindsym XF86AudioLowerVolume exec "amixer set Master 5%-"
 bindsym XF86AudioRaiseVolume exec "amixer set Master 5%+"
 
 # Start Applications
-bindsym $mod+F2 exec chromium-browser
+bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec thunar
 bindsym $mod+Shift+F3 exec gksu thunar
 bindsym $mod+t exec --no-startup-id pkill compton
