@@ -311,7 +311,7 @@ set_from_resource $term_color15    color15
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
 	#font xft:Droid Sans Mono, FontAwesome5Brands, FontAwesome5Free 10
-	font pango:DejaVu Sans Mono 9, FontAwesome5Brands 9, FontAwesome5Free 9
+	font pango:DejaVu Sans Mono 8, FontAwesome5Brands 8, FontAwesome5Free 8
 	i3bar_command i3bar
 	status_command i3status
 	position bottom
