@@ -1,0 +1,3 @@
+[submodule ".i3/scripts/i3-scrot"]
+	path = .i3/scripts/i3-scrot
+	url = https://gitlab.manjaro.org/packages/community/i3/i3-scrot
