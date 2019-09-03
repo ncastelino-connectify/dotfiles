@@ -73,7 +73,7 @@ bindsym $mod+Shift+F3 exec gksu thunar
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym $mod+Insert exec --no-startup-id /home/neil/dotfiles/.i3/scripts/i3-scrot
+bindsym $mod+Insert exec --no-startup-id /home/neil/dotfiles/.i3/scripts/i3-scrot/i3-scrot
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # focus_follows_mouse no
