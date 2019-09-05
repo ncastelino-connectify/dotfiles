@@ -64,6 +64,11 @@ Xcursor.size:                     0
 urxvt.font: xft:Monospace:size=8:antialias=true
 urxvt.boldFont: xft:Monospace:bold:size=8:antialias=true
 
+! :Bind C-0, C-+ and C-= to activate small, medium, and big font size resp.
+URxvt.keysym.C-0: command:\033]710;xft:Monospace:size=10:antialias=true\007\033]711;xft:Monospace:size=10:bold:antialias=true\007
+URxvt.keysym.C-minus: command:\033]710;xft:Monospace:size=8:antialias=true\007\033]711;xft:Monospace:size=8:bold:antialias=true\007
+URxvt.keysym.C-equal: command:\033]710;xft:Monospace:size=12:antialias=true\007\033]711;xft:Monospace:size=12:bold:antialias=true\007
+
 ! alternative font settings with 'terminus':
 ! URxvt.font:      -xos4-terminus-medium-r-normal--16-160-72-72-c-80-iso10646-1
 ! URxvt.bold.font: -xos4-terminus-bold-r-normal--16-160-72-72-c-80-iso10646-1
