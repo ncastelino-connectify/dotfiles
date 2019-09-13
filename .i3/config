@@ -62,9 +62,9 @@ bindsym F3 exec "xbacklight -inc 10; notify-send Brighten $(xbacklight)"
 bindsym F2 exec "xbacklight -dec 10; notify-send Dim $(xbacklight)"
 
 # Volume controls
-bindsym XF86AudioMute exec "amixer set Master toggle"
-bindsym XF86AudioLowerVolume exec "amixer set Master 5%-"
-bindsym XF86AudioRaiseVolume exec "amixer set Master 5%+"
+bindsym XF86AudioMute exec "amixer set Master toggle; notify-send 'Mute Toggled'"
+bindsym XF86AudioLowerVolume exec "amixer set Master 5%-; notify-send 'Vol -'"
+bindsym XF86AudioRaiseVolume exec "amixer set Master 5%+; notify-send 'Vol +'"
 
 # Start Applications
 bindsym $mod+F2 exec firefox
@@ -73,7 +73,8 @@ bindsym $mod+Shift+F3 exec gksu thunar
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym $mod+Insert exec --no-startup-id /home/neil/dotfiles/.i3/scripts/i3-scrot/i3-scrot
+bindsym Print exec --no-startup-id /home/neil/dotfiles/.i3/scripts/i3-scrot/i3-scrot
+bindsym $mod+Shift+Print --release exec --no-startup-id /home/neil/dotfiles/.i3/scripts/i3-scrot/i3-scrot -s
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # focus_follows_mouse no
