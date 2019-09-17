@@ -1,0 +1,9 @@
+#!/bin/bash
+
+a=$(acpi -b)
+p=$(echo "$a" | cut -d',' -f2 | sed -e 's/%//g')
+s=$(echo "$a" | cut -d',' -f1 | cut -d' ' -f3)
+
+if [ "$p" -lt 20 ] && [ "$s" != "Charging" ]; then
+    notify-send 'Low Battery'
+fi
