@@ -61,7 +61,7 @@ Xcursor.theme: xcursor-breeze
 Xcursor.size:                     0
 
 ! URxvt.font:                       9x15,xft:TerminessTTFNerdFontMono
-urxvt.font: xft:Monospace:size=8:antialias=true
+urxvt.font: xft:Monospace:size=8:antialias=true,xft:symbola:size=10:minspace=False
 urxvt.boldFont: xft:Monospace:bold:size=8:antialias=true
 
 ! :Bind C-0, C-+ and C-= to activate small, medium, and big font size resp.
