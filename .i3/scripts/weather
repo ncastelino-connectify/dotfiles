@@ -1,0 +1,4 @@
+#!/bin/bash
+
+location="$1"
+curl -s "https://wttr.in/${location}?format=%c+%t"
