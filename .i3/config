@@ -414,3 +414,8 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+# Move workspace to left facing monitor
+bindsym $mod+Shift+KP_4 move workspace to output left
+# Move workspace to right facing monitor
+bindsym $mod+Shift+KP_6 move workspace to output right
